@@ -1,14 +1,26 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom'
 import logo from '../../images/logo.png'
-import {IoIosSearch} from "react-icons/io"
-import {FaHeart} from "react-icons/fa"
-import {CgUser} from "react-icons/cg"
+import {IoIosSearch} from 'react-icons/io'
+import {FaHeart} from 'react-icons/fa'
+import {CgUser} from 'react-icons/cg'
+import {useTranslation} from 'react-i18next'
+import {LANGUAGES} from '../../constants/constants'
+
+type HoverProps = {
+    isActive: boolean
+};
 
 const Navbar = () => {
+    const {i18n, t} = useTranslation()
     const hover = 'hover:text-subMain text-white transitions'
-    const Hover = ({isActive}: any) => (
+    const Hover = ({isActive}: HoverProps) => (
         isActive ? 'text-subMain' : hover)
+
+    const onChangeLang = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const lang_code = e.target.value
+        i18n.changeLanguage(lang_code)
+    };
     return (
         <>
             <div className='bg-main shadow-md sticky top-0 z-20'>
@@ -32,13 +44,13 @@ const Navbar = () => {
                     <div
                         className='col-span-3 font-medium text-sm hidden xl:gap-14 2xl:gap-20 justify-between lg:flex xl:justify-end items-center'>
                         <NavLink to='/movies' className={Hover}>
-                            Movies
+                            {t("movies")}
                         </NavLink>
                         <NavLink to='/about-us' className={Hover}>
-                            About Us
+                            {t("about")}
                         </NavLink>
                         <NavLink to='/contact-us' className={Hover}>
-                            Contact Us
+                            {t("contact")}
                         </NavLink>
                         <NavLink to='/login' className={Hover}>
                             <CgUser className='w-8 h-8'/>
@@ -50,6 +62,15 @@ const Navbar = () => {
                                 3
                             </div>
                         </NavLink>
+
+                        <select defaultValue={i18n.language} onChange={onChangeLang} className='bg-main cursor-pointer'>
+                            {LANGUAGES.map(({code, label}) => (
+                                <option key={code} value={code} className='bg-main text-dryGray cursor-pointer'>
+                                    {label}
+                                </option>
+                            ))}
+                        </select>
+
                     </div>
                 </div>
             </div>
