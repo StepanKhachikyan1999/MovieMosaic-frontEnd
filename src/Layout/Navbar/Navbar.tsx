@@ -1,32 +1,44 @@
 import React, {useState} from 'react'
 import {Link, NavLink} from 'react-router-dom'
-import {IoIosSearch} from 'react-icons/io'
 import {FaHeart} from 'react-icons/fa'
 import {CgUser} from 'react-icons/cg'
 import {useTranslation} from 'react-i18next'
 import {LANGUAGES} from '../../constants/constants'
 import logo from '../../images/logo.png'
+import useDisplaySize from "../../hooks/displaySize";
+import {IoIosSearch} from "react-icons/io";
+import {CiMenuFries} from "react-icons/ci";
+
 
 type HoverProps = {
     isActive: boolean
-};
+}
 
 const Navbar = () => {
-    const {i18n, t} = useTranslation();
+    const {i18n, t} = useTranslation()
+    const {width} = useDisplaySize()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const [isSearchOpen, setIsSearchOpen] = useState(false)
 
-    const hover = 'hover:text-subMain text-white transitions';
+    console.log(width, 'sizeScreen')
+
+
+    const hover = 'hover:text-subMain text-white transitions'
     const Hover = ({isActive}: HoverProps) => (isActive ? 'text-subMain' : hover)
 
     const onChangeLang = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const lang_code = e.target.value;
-        i18n.changeLanguage(lang_code);
+        const lang_code = e.target.value
+        i18n.changeLanguage(lang_code)
     };
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen(!isMenuOpen)
     };
 
+    // Toggle search input visibility
+    const toggleSearch = () => {
+        setIsSearchOpen(!isSearchOpen);
+    };
     return (
         <>
             <div className='bg-main shadow-md sticky top-0 z-20'>
@@ -36,30 +48,42 @@ const Navbar = () => {
                             <img className='w-full h-12 object-contain' src={logo} alt='logo'/>
                         </Link>
                     </div>
-                    <div className='col-span-3'>
+                    <div className='col-span-3 flex justify-end'>
                         {/* Hamburger Menu Button for Tablet and Mobile */}
-                        <div className='lg:hidden'>
-                            <button onClick={toggleMenu} className='text-white'>
-                                ☰
-                            </button>
+                        <div className='flex gap-1.5'>
+                            <div className='lg:hidden'>
+                                <button onClick={toggleSearch} className='text-orange-500 text-[22px]'>
+                                    <IoIosSearch/>
+                                </button>
+                            </div>
+                            <div className='lg:hidden'>
+                                <button onClick={toggleMenu} className='text-orange-500 text-[22px]'>
+                                    <CiMenuFries/>
+                                </button>
+                            </div>
                         </div>
 
                         {/* Search Bar */}
-                        <form
-                            className={`w-full text-sm bg-dryGray rounded flex-btn gap-4 ${
-                                isMenuOpen ? 'hidden lg:flex' : 'lg:flex'
-                            }`}
-                            action=''
-                        >
-                            <button type='submit' className='bg-subMain w-12 flex-colo h-12 rounded text-white'>
-                                <IoIosSearch/>
-                            </button>
-                            <input
-                                type='text'
-                                placeholder='Search Movie'
-                                className='font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-2 text-black'
-                            />
-                        </form>
+                        {
+                            width > 1024 || isSearchOpen ? <form
+                                className={`w-full text-sm bg-dryGray rounded flex-btn gap-4 ${
+                                    (isMenuOpen || isSearchOpen) ? 'lg:flex' : 'hidden lg:flex'
+                                }`}
+                                action=''
+                            >
+                                <button type='submit' className='bg-subMain w-12 flex-colo h-12 rounded text-white'>
+                                    <IoIosSearch onClick={toggleSearch}/>
+                                </button>
+                                <input
+                                    type='text'
+                                    placeholder='Search Movie'
+                                    className={`font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-2 text-black ${
+                                        isSearchOpen ? 'block' : 'hidden'
+                                    }`}
+                                />
+                            </form> : <></>
+                        }
+
                     </div>
 
                     {/* Main Navigation Links */}
