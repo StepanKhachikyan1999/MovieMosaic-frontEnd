@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next'
 import {LANGUAGES} from '../../constants/constants'
 import logo from '../../images/logo.png'
 import useDisplaySize from "../../hooks/displaySize";
-import {IoIosSearch} from "react-icons/io";
+import {IoIosSearch, IoMdClose} from "react-icons/io";
 import {CiMenuFries} from "react-icons/ci";
 
 
@@ -41,54 +41,60 @@ const Navbar = () => {
     };
     return (
         <>
-            <div className='bg-main shadow-md sticky top-0 z-20'>
+            <div className={`bg-main shadow-md sticky top-0 z-20 ${width < 1024 && isMenuOpen && `h-screen`}`}>
                 <div className='container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-7 justify-between items-center'>
                     <div className='col-span-1 lg:block hidden'>
                         <Link to='/'>
                             <img className='w-full h-12 object-contain' src={logo} alt='logo'/>
                         </Link>
                     </div>
-                    <div className='col-span-3 flex justify-end'>
-                        {/* Hamburger Menu Button for Tablet and Mobile */}
-                        <div className='flex gap-1.5'>
-                            <div className='lg:hidden'>
-                                <button onClick={toggleSearch} className='text-orange-500 text-[22px]'>
-                                    <IoIosSearch/>
-                                </button>
-                            </div>
-                            <div className='lg:hidden'>
-                                <button onClick={toggleMenu} className='text-orange-500 text-[22px]'>
-                                    <CiMenuFries/>
-                                </button>
-                            </div>
+                    <div className='flex justify-between items-center lg:justify-evenly gap-6'>
+                        <div className='col-span-1 lg:hidden block'>
+                            <Link to='/'>
+                                <img className='w-full h-12 object-contain' src={logo} alt='logo'/>
+                            </Link>
                         </div>
 
-                        {/* Search Bar */}
-                        {
-                            width > 1024 || isSearchOpen ? <form
-                                className={`w-full text-sm bg-dryGray rounded flex-btn gap-4 ${
-                                    (isMenuOpen || isSearchOpen) ? 'lg:flex' : 'hidden lg:flex'
-                                }`}
-                                action=''
-                            >
-                                <button type='submit' className='bg-subMain w-12 flex-colo h-12 rounded text-white'>
-                                    <IoIosSearch onClick={toggleSearch}/>
-                                </button>
-                                <input
-                                    type='text'
-                                    placeholder='Search Movie'
-                                    className={`font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-2 text-black ${
-                                        isSearchOpen ? 'block' : 'hidden'
-                                    }`}
-                                />
-                            </form> : <></>
-                        }
+                        <div className='col-span-3 flex justify-end'>
+                            {/* Hamburger Menu Button for Tablet and Mobile */}
+                            <div className='flex gap-1.5'>
+                                <div className='lg:hidden'>
+                                    <button onClick={toggleSearch} className='text-orange-500 text-[22px]'>
+                                        <IoIosSearch/>
+                                    </button>
+                                </div>
+                                <div className='lg:hidden'>
+                                    <button onClick={toggleMenu} className='text-orange-500 text-[22px]'>
+                                        {isMenuOpen ? <IoMdClose/> : <CiMenuFries/>}
+                                    </button>
+                                </div>
+                            </div>
 
+                            {/* Search Bar */}
+                            {
+                                width > 1024 || isSearchOpen ? <form
+                                    className={`w-full text-sm bg-dryGray rounded flex-btn gap-4 ${
+                                        (isMenuOpen || isSearchOpen) ? 'lg:flex' : 'hidden lg:flex'
+                                    }`}
+                                    action=''
+                                >
+                                    <button type='submit' className='bg-subMain w-12 flex-colo h-12 rounded text-white'>
+                                        <IoIosSearch onClick={toggleSearch}/>
+                                    </button>
+                                    <input
+                                        type='text'
+                                        placeholder='Search Movie'
+                                        className={`font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-2 text-black block`}
+                                    />
+                                </form> : <></>
+                            }
+
+                        </div>
                     </div>
 
                     {/* Main Navigation Links */}
                     <div
-                        className={`col-span-3 font-medium text-sm ${
+                        className={`col-span-3 font-medium text-sm ${width < 1024 && isMenuOpen && `h-60`}  ${
                             isMenuOpen ? 'flex flex-col lg:hidden' : 'hidden lg:flex'
                         } lg:gap-14 2xl:gap-20 justify-between items-center`}
                     >
