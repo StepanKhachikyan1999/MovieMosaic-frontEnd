@@ -9,6 +9,8 @@ import {RiMovie2Line} from "react-icons/ri";
 import {useDispatch, useSelector} from "react-redux";
 import {IfMovieLiked, LikeMovie} from "../../Context/Functionalities";
 
+import 'swiper/swiper-bundle.min.css';
+
 const Swipper = ({sameClass, movies}: any) => {
     // @ts-ignore
     const {isLoading} = useSelector((state) => state.userLikeMovie)
