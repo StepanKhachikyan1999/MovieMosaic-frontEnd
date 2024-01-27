@@ -16,6 +16,8 @@ import toast from "react-hot-toast";
 import {InlineError} from "../../../components/Notfications/Error";
 import {Imagepreview} from "../../../components/Imagepreview";
 
+import userImage from '../../../images/user.png'
+
 function AddMovie() {
     const [modalOpen, setModalOpen] = useState(false);
     const [cast, setCast] = useState(null);
@@ -226,7 +228,7 @@ function AddMovie() {
                                     className="p-2 italic text-xs text-text rounded flex-colo bg-main border border-border"
                                 >
                                     <img
-                                        src={`${user?.image ? user.image : "/images/user.png"}`}
+                                        src={`${user?.image ? user.image : userImage}`}
                                         alt={user.name}
                                         className="w-full h-24 object-cover rounded mb-2"
                                     />

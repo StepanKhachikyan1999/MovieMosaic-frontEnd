@@ -142,6 +142,7 @@ import {FaHeart, FaSearch} from "react-icons/fa";
 import {CgUser} from "react-icons/cg";
 import {useSelector} from "react-redux";
 import logo from '../../logos/6.svg'
+import userImage from '../../images/user.png'
 
 function NavBar() {
     const [search, setSearch] = useState("");
@@ -219,7 +220,7 @@ function NavBar() {
                         >
                             {userInfo ? (
                                 <img
-                                    src={userInfo?.image ? userInfo?.image : "/images/user.png"}
+                                    src={userInfo?.image ? userInfo?.image : userImage}
                                     alt={userInfo?.fullName}
                                     className="w-8 h-8 rounded-full border object-cover border-subMain"
                                 />

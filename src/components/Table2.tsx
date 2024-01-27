@@ -3,6 +3,8 @@ import {FaEdit} from "react-icons/fa";
 import {MdDelete} from "react-icons/md";
 import {DateFormat, shortUppercaseId} from "./Notfications/Empty";
 
+import defaultAvatar from '../images/user.png'
+
 const Head = "text-xs text-left text-main font-semibold px-6 py-2 uppercase";
 const Text = "text-sm text-left leading-6 whitespace-nowrap px-5 py-3";
 
@@ -17,7 +19,7 @@ const Rows = ({data, users, OnEditFunction, onDeleteFunction}: any) => {
                         <div className="w-12 p-1 bg-dry border border-border h-12 rounded overflow-hidden">
                             <img
                                 className="h-full w-full object-cover"
-                                src={`${data?.image ? data.image : "/images/user.png"}`}
+                                src={`${data?.image ? data.image : defaultAvatar}`}
                                 alt={data?.fullName}
                             />
                         </div>
