@@ -1,5 +1,5 @@
-import React from 'react';
-import {FaRegStar, FaStar, FaStarHalfAlt} from 'react-icons/fa';
+import React from 'react'
+import {FaRegStar, FaStar, FaStarHalfAlt} from 'react-icons/fa'
 
 function Rating({value}: any) {
     return (
@@ -53,4 +53,6 @@ function Rating({value}: any) {
     );
 }
 
-export default Rating;
+export default Rating
+
+// new

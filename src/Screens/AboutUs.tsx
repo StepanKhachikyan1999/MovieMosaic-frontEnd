@@ -1,6 +1,6 @@
-import React from 'react';
-import Head from '../components/Head';
-import Layout from './../Layout/Layout';
+import React from 'react'
+import Head from '../components/Head'
+import Layout from './../Layout/Layout'
 
 function AboutUs() {
     return (
@@ -65,4 +65,6 @@ function AboutUs() {
     );
 }
 
-export default AboutUs;
+export default AboutUs
+
+// new

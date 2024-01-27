@@ -1,23 +1,22 @@
-import React, {ReactNode} from 'react';
-import Navbar from "./Navbar/Navbar";
+import React from "react";
 import Footer from "./Footer/Footer";
 import MobileFooter from "./Footer/MobileFooter";
+import NavBar from "./Navbar/Navbar";
 
-
-interface LayoutProps {
-    children: ReactNode;
+function Layout({children}: any) {
+    return (
+        <>
+            <div className="bg-main text-white">
+                <NavBar/>
+                {children}
+                <Footer/>
+                {/* mobile footer */}
+                <MobileFooter/>
+            </div>
+        </>
+    );
 }
 
-const Layout: React.FC<LayoutProps> = ({children}) => {
-    return (
-        <div className='bg-main text-white'>
-            <Navbar/>
-            {children}
-            <Footer/>
-            {/* mobile footer */}
-            <MobileFooter/>
-        </div>
-    );
-};
-
 export default Layout;
+
+// new

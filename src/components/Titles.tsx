@@ -9,4 +9,6 @@ function Titles({title, Icon}: any) {
     );
 }
 
-export default Titles;
+export default Titles
+
+// new

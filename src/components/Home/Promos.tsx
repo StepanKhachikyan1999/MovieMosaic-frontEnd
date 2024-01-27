@@ -1,6 +1,5 @@
 import React from 'react'
 import {FiUser} from 'react-icons/fi'
-import mobilePng from '../../images/mobile.png'
 
 function Promos() {
     return (
@@ -28,7 +27,7 @@ function Promos() {
                 </div>
                 <div>
                     <img
-                        src={mobilePng}
+                        src="/images/mobile.png"
                         alt="Mobile app"
                         className="w-full object-contain"
                     />
@@ -38,4 +37,6 @@ function Promos() {
     );
 }
 
-export default Promos;
+export default Promos
+
+// new

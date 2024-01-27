@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function Head({title}: any) {
     return (
@@ -17,4 +17,6 @@ function Head({title}: any) {
     );
 }
 
-export default Head;
+export default Head
+
+// new

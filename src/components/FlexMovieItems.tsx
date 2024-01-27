@@ -1,6 +1,6 @@
-import React from 'react';
-import {FaRegCalendarAlt} from 'react-icons/fa';
-import {BiTime} from 'react-icons/bi';
+import React from "react";
+import {FaRegCalendarAlt} from "react-icons/fa";
+import {BiTime} from "react-icons/bi";
 
 function FlexMovieItems({movie}: any) {
     return (
@@ -14,10 +14,12 @@ function FlexMovieItems({movie}: any) {
             </div>
             <div className="flex items-center gap-2">
                 <BiTime className="text-subMain w-3 h-3"/>
-                <span className="text-sm font-medium">{movie.time}</span>
+                <span className="text-sm font-medium">{movie.time} Hr</span>
             </div>
         </>
     );
 }
 
-export default FlexMovieItems;
+export default FlexMovieItems
+
+// new

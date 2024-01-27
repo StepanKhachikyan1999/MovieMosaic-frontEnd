@@ -1,18 +1,16 @@
-import {Dialog, Transition} from "@headlessui/react";
-import React, {Fragment, useRef} from "react";
-import {IoClose} from "react-icons/io5";
+import React, {Fragment, useRef} from 'react'
+import {Dialog, Transition} from '@headlessui/react'
+import {IoClose} from 'react-icons/io5'
 
 function MainModal({modalOpen, setModalOpen, children}: any) {
-    const cancelButtonRef = useRef();
-
+    const cancelButtonRef = useRef()
     return (
         <>
             <Transition show={modalOpen} as={Fragment} appear>
                 <Dialog
                     as="div"
                     className="fixed inset-0 z-30 overflow-y-auto text-center"
-                    // @ts-ignore
-                    initialFocus={cancelButtonRef}
+                    initialFocus={cancelButtonRef as any}
                     onClose={() => setModalOpen(false)}
                 >
                     <div className="min-h-screen px-4">
@@ -62,4 +60,6 @@ function MainModal({modalOpen, setModalOpen, children}: any) {
     );
 }
 
-export default MainModal;
+export default MainModal
+
+// new

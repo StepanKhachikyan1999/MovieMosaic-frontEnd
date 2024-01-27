@@ -1,5 +1,5 @@
-import Drawer from "rc-drawer";
-import React from "react";
+import Drawer from 'rc-drawer'
+import React from 'react'
 
 function MainDrawer({children, drawerOpen, closeDrawer}: any) {
     return (
@@ -16,4 +16,6 @@ function MainDrawer({children, drawerOpen, closeDrawer}: any) {
     );
 }
 
-export default MainDrawer;
+export default MainDrawer
+
+// new

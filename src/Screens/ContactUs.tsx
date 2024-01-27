@@ -1,7 +1,7 @@
-import React from 'react';
-import {FiMail, FiMapPin, FiPhoneCall} from 'react-icons/fi';
-import Head from '../components/Head';
-import Layout from '../Layout/Layout';
+import React from 'react'
+import {FiMail, FiMapPin, FiPhoneCall} from 'react-icons/fi'
+import Head from '../components/Head'
+import Layout from '../Layout/Layout'
 
 function ContactUs() {
     const ContactData = [
@@ -55,4 +55,7 @@ function ContactUs() {
     );
 }
 
-export default ContactUs;
+export default ContactUs
+
+
+// new

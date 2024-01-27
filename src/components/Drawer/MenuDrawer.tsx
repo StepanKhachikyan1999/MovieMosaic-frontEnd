@@ -1,5 +1,5 @@
-import React from "react";
-import {Link, NavLink} from "react-router-dom";
+import React from 'react'
+import {Link, NavLink} from 'react-router-dom'
 import MainDrawer from "./MainDrawer";
 import {IoClose} from "react-icons/io5";
 import {BsCollectionPlay} from "react-icons/bs";
@@ -36,7 +36,7 @@ function MenuDrawer({drawerOpen, toggleDrawer}: any) {
     const LinkDatas = [
         {
             icon: FaFacebook,
-            link: "https://www.facebook.com/zpunet",
+            link: "https://www.facebook.com/",
         },
         {
             icon: FaMedium,
@@ -44,11 +44,11 @@ function MenuDrawer({drawerOpen, toggleDrawer}: any) {
         },
         {
             icon: FaTelegram,
-            link: "https://t.me/zpunet",
+            link: "https://t.me/aaaaa",
         },
         {
             icon: FaYoutube,
-            link: "https://www.youtube.com/channel/UCOYwYO-LEsrjqBs6xXSfq1w",
+            link: "https://www.youtube.com",
         },
     ];
 
@@ -107,4 +107,6 @@ function MenuDrawer({drawerOpen, toggleDrawer}: any) {
     );
 }
 
-export default MenuDrawer;
+export default MenuDrawer
+
+// new

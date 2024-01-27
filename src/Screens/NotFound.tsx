@@ -10,7 +10,9 @@ function NotFound() {
             {/*    src="/images/404.svg"*/}
             {/*    alt="notfound"*/}
             {/*/>*/}
-            404 image
+            <span className='text-orange-500 px-16'>
+                image place
+            </span>
             <h1 className="lg:text-4xl font-bold">Page Not Found</h1>
             <p className="font-medium text-border italic leading-6">
                 The page you are looking for does not exist. You may have mistyped the
@@ -26,4 +28,6 @@ function NotFound() {
     );
 }
 
-export default NotFound;
+export default NotFound
+
+// new

@@ -1,6 +1,6 @@
-import React from "react";
-import MainModal from "./MainModal";
-import {FaFacebook, FaPinterest, FaTelegram, FaTwitter, FaWhatsapp,} from "react-icons/fa";
+import React from 'react'
+import MainModal from './MainModal'
+import {FaFacebook, FaPinterest, FaTelegram, FaTwitter, FaWhatsapp,} from 'react-icons/fa'
 import {
     EmailShareButton,
     FacebookShareButton,
@@ -39,7 +39,7 @@ function ShareMovieModal({modalOpen, setModalOpen, movie}: any) {
         },
     ];
 
-    const url = `${window.location.protocol}//${window.location.host}/movie/${movie.name}`;
+    const url = `${window.location.protocol}//${window.location.host}/movie/${movie?._id}`;
     return (
         <MainModal modalOpen={modalOpen} setModalOpen={setModalOpen}>
             <div
@@ -67,4 +67,6 @@ function ShareMovieModal({modalOpen, setModalOpen, movie}: any) {
     );
 }
 
-export default ShareMovieModal;
+export default ShareMovieModal
+
+// new
