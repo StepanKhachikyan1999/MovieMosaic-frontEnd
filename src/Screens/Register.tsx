@@ -66,7 +66,7 @@ function Register() {
                     <div className="w-full">
                         <Input
                             label="FullName"
-                            placeholder="Netflixo React Tailwind"
+                            placeholder="NewMoviess React Tailwind"
                             type="text"
                             bg={true}
                             name="fullName"

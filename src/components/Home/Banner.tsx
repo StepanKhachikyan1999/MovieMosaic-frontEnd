@@ -1,15 +1,15 @@
 import React from 'react'
-import {Link} from "react-router-dom";
-import {Autoplay} from "swiper";
-import {Swiper, SwiperSlide} from "swiper/react";
-import FlexMovieItems from "../FlexMovieItems";
-import {FaHeart} from "react-icons/fa";
-import Loader from "../Notfications/Loader";
-import {RiMovie2Line} from "react-icons/ri";
-import {useDispatch, useSelector} from "react-redux";
-import {IfMovieLiked, LikeMovie} from "../../Context/Functionalities";
+import {Link} from 'react-router-dom'
+import {Autoplay} from 'swiper'
+import {Swiper, SwiperSlide} from 'swiper/react'
+import FlexMovieItems from '../FlexMovieItems'
+import {FaHeart} from 'react-icons/fa'
+import Loader from '../Notfications/Loader'
+import {RiMovie2Line} from 'react-icons/ri'
+import {useDispatch, useSelector} from 'react-redux'
+import {IfMovieLiked, LikeMovie} from '../../Context/Functionalities'
 
-import 'swiper/swiper-bundle.min.css';
+import 'swiper/swiper-bundle.min.css'
 
 const Swipper = ({sameClass, movies}: any) => {
     // @ts-ignore
@@ -97,5 +97,3 @@ function Banner({movies, isLoading}: any) {
 }
 
 export default Banner
-
-// new

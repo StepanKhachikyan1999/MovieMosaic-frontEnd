@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import logo from '../../logos/6.svg'
 
 function Footer() {
     const Links = [
@@ -99,9 +100,9 @@ function Footer() {
                         <div className="pb-3.5 sm:pb-0 col-span-1 md:col-span-2 lg:col-span-3">
                             <Link to="/">
                                 <img
-                                    src="/images/logo.png"
+                                    src={logo}
                                     alt="logo"
-                                    className="w-2/4 object-contain h-12"
+                                    className="object-contain h-12"
                                 />
                             </Link>
                             <p className="leading-7 text-sm text-border mt-3">
@@ -133,5 +134,3 @@ function Footer() {
 }
 
 export default Footer
-
-// new

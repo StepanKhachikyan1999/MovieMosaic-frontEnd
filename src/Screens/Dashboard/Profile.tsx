@@ -76,7 +76,7 @@ function Profile() {
                     <div className="col-span-2">
                         <Imagepreview
                             image={imageUrl}
-                            name={userInfo ? userInfo.fullName : "Netflixo React Tailwind"}
+                            name={userInfo ? userInfo.fullName : "NewMoviess React Tailwind"}
                         />
                     </div>
                 </div>
@@ -84,7 +84,7 @@ function Profile() {
                 <div className="w-full">
                     <Input
                         label="FullName"
-                        placeholder="Netflixo React Tailwind"
+                        placeholder="NewMoviess React Tailwind"
                         type="text"
                         bg={true}
                         name="fullName"

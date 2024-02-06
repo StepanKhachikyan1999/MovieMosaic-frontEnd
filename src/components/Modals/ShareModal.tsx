@@ -53,7 +53,7 @@ function ShareMovieModal({modalOpen, setModalOpen, movie}: any) {
                             key={index}
                             url={url}
                             // @ts-ignore
-                            quote="Netflixo | Free Movies Site"
+                            quote="NewMoviess | Free Movies Site"
                         >
                             <div
                                 className="w-12 transitions hover:bg-subMain flex-colo text-lg h-12 bg-white rounded bg-opacity-30">
