@@ -7,7 +7,7 @@ import logo from '../../logos/6.svg'
 import userImage from '../../images/user.png'
 import {useTranslation} from "react-i18next";
 import useDisplaySize from "../../hooks/displaySize";
-import LANGUAGES from "../../constants/constants";
+import LanguageSelector from '../../hooks/LanguageSelector'
 
 function NavBar() {
     const [search, setSearch] = useState("");
@@ -122,17 +122,7 @@ function NavBar() {
 
                         <div>
                             {/* Language Selector */}
-                            <select
-                                defaultValue={i18n.language}
-                                onChange={onChangeLang}
-                                className='bg-main cursor-pointer'
-                            >
-                                {LANGUAGES.map(({code, img, label}) => (
-                                    <option key={code} value={code} className='bg-main text-dryGray cursor-pointer'>
-                                        {label}
-                                    </option>
-                                ))}
-                            </select>
+                            <LanguageSelector/>
                         </div>
                     </div>
                 </div>
