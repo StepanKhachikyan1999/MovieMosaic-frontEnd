@@ -15,6 +15,9 @@ i18n.use(initReactI18next).init({
                 movies: "movies",
                 about: "about us",
                 contact: "contact us",
+                searchMovieName: "Search Movies",
+                watch: "Watch",
+                aboutUs: "About Us",
                 user: "My name is: {{name}}"
             },
         },
@@ -23,6 +26,9 @@ i18n.use(initReactI18next).init({
                 movies: "ֆիլմեր",
                 about: "Մեր մասին",
                 contact: "կապ",
+                searchMovieName: "Ֆիլմերի որոնում",
+                watch: "Դիտել",
+                aboutUs: "Մեր Մասին",
                 user: "Mi nombre es: {{name}}"
             },
         },
@@ -31,6 +37,9 @@ i18n.use(initReactI18next).init({
                 movies: "фильмы",
                 about: "о нас",
                 contact: "контакт",
+                searchMovieName: "Найдите названия фильмов здесь",
+                watch: "Смотреть",
+                aboutUs: "О нас",
                 user: "Mi chiamo: {{name}}"
             },
         },

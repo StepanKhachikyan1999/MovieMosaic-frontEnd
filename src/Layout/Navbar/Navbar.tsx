@@ -1,17 +1,17 @@
-import React, {useState} from "react";
-import {Link, NavLink, useNavigate} from "react-router-dom";
-import {FaHeart, FaSearch} from "react-icons/fa";
-import {CgUser} from "react-icons/cg";
-import {useSelector} from "react-redux";
+import React, {useState} from 'react'
+import {Link, NavLink, useNavigate} from 'react-router-dom'
+import {FaHeart, FaSearch} from 'react-icons/fa'
+import {CgUser} from 'react-icons/cg'
+import {useSelector} from 'react-redux'
 import logo from '../../logos/6.svg'
 import userImage from '../../images/user.png'
-import {useTranslation} from "react-i18next";
-import useDisplaySize from "../../hooks/displaySize";
+import {useTranslation} from 'react-i18next'
+import useDisplaySize from '../../hooks/displaySize'
 import LanguageSelector from '../../hooks/LanguageSelector'
 
-function NavBar() {
-    const [search, setSearch] = useState("");
-    const navigate = useNavigate();
+function NavBar(): any {
+    const [search, setSearch] = useState("")
+    const navigate = useNavigate()
     const {i18n, t} = useTranslation()
     const {width} = useDisplaySize()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -52,7 +52,8 @@ function NavBar() {
     return (
         <>
             <div className="bg-main shadow-md sticky top-0 z-20">
-                <div className="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-7 justify-between items-center">
+                <div
+                    className="container mx-auto py-6 px-2 lg:grid gap-10 grid-cols-7 justify-between items-center">
                     {/* Logo */}
                     <div className="col-span-1 lg:block hidden">
                         <Link to='/'>
@@ -75,7 +76,7 @@ function NavBar() {
                                 type="search"
                                 value={search}
                                 onChange={(e) => setSearch(e.target.value)}
-                                placeholder="Search Movie Name from here"
+                                placeholder={t('searchMovieName')}
                                 className="font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-2 text-black"
                             />
                         </form>

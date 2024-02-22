@@ -1,12 +1,14 @@
 import React from 'react'
 import Head from '../components/Head'
 import Layout from './../Layout/Layout'
+import {useTranslation} from "react-i18next"
 
 function AboutUs() {
+    const {t} = useTranslation()
     return (
         <Layout>
             <div className="min-height-screen container mx-auto px-2 my-6">
-                <Head title="About Us"/>
+                <Head title={t('aboutUs')}/>
                 <div className="xl:py-20 py-10 px-4">
                     <div className="grid grid-flow-row xl:grid-cols-2 gap-4 xl:gap-16 items-center">
                         <div>

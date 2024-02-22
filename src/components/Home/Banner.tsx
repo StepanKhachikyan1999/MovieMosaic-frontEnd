@@ -10,8 +10,10 @@ import {useDispatch, useSelector} from 'react-redux'
 import {IfMovieLiked, LikeMovie} from '../../Context/Functionalities'
 
 import 'swiper/swiper-bundle.min.css'
+import {useTranslation} from 'react-i18next'
 
 const Swipper = ({sameClass, movies}: any) => {
+    const {t} = useTranslation()
     // @ts-ignore
     const {isLoading} = useSelector((state) => state.userLikeMovie)
     const dispatch = useDispatch()
@@ -20,7 +22,7 @@ const Swipper = ({sameClass, movies}: any) => {
 
     // if liked function
     const isLiked = (movie: any) => {
-        return IfMovieLiked(movie);
+        return IfMovieLiked(movie)
     };
 
     return (
@@ -53,7 +55,7 @@ const Swipper = ({sameClass, movies}: any) => {
                                 to={`/movie/${movie?._id}`}
                                 className="bg-subMain hover:text-main transitions text-white px-8 py-3 rounded font-medium sm:text-sm text-xs"
                             >
-                                Watch
+                                {t('watch')}
                             </Link>
                             <button
                                 onClick={() => LikeMovie(movie, dispatch as any, userInfo)}
