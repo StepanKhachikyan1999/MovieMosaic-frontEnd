@@ -1,7 +1,7 @@
-import React from 'react'
+import { FC } from 'react';
 import {FiUser} from 'react-icons/fi'
 
-function Promos() {
+const Promos:FC = () =>  {
     return (
         <div className="my-20 py-10 md:px-20 px-8 bg-dry">
             <div className="lg:grid lg:grid-cols-2 lg:gap-10 items-center">
@@ -38,5 +38,3 @@ function Promos() {
 }
 
 export default Promos
-
-// new

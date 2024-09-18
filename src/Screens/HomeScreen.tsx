@@ -1,9 +1,9 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 import toast from "react-hot-toast";
 import {useDispatch, useSelector} from "react-redux";
 import Banner from "../components/Home/Banner";
 import PopularMovies from "../components/Home/PopularMovies";
-import Promos from "../components/Home/Promos";
+// import Promos from "../components/Home/Promos";
 import TopRated from "../components/Home/Toprated";
 import Layout from "../Layout/Layout";
 import {getAllMoviesAction, getRandomMoviesAction, getTopRatedMovieAction,} from "../Redux/Actions/MoviesActions";
@@ -50,7 +50,7 @@ function HomeScreen() {
             <div className="container mx-auto min-h-screen px-2 mb-6">
                 <Banner movies={movies} isLoading={isLoading}/>
                 <PopularMovies movies={randomMovies} isLoading={randomLoading}/>
-                <Promos/>
+                {/* <Promos/> */}
                 <TopRated movies={topMovies} isLoading={topLoading}/>
             </div>
         </Layout>
