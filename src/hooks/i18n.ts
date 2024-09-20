@@ -15,7 +15,7 @@ i18n.use(initReactI18next).init({
                 movies: "movies",
                 about: "about us",
                 contact: "contact us",
-                searchMovieName: "Search Movies777",
+                searchMovieName: "Search Movies",
                 watch: "Watch",
                 aboutUs: "About Us",
                 user: "My name is: {{name}}"
