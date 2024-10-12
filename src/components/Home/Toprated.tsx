@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Titles from './../Titles'
-import {BsBookmarkStarFill, BsCaretLeftFill, BsCaretRightFill,} from 'react-icons/bs'
+import {BsBookmarkStarFill, BsCaretLeftFill, BsCaretRightFill} from 'react-icons/bs'
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation} from "swiper";
 import {FaHeart} from "react-icons/fa";
@@ -93,7 +93,8 @@ function TopRated({movies, isLoading}: any) {
 
     return (
         <div className="my-16">
-            <Titles title="Top Rated" Icon={BsBookmarkStarFill}/>
+            {/*<Titles title="Top Rated" Icon={BsBookmarkStarFill}/>*/}
+            <Titles title="Ամենավարկանիշային ֆիլմեր" Icon={BsBookmarkStarFill}/>
             <div className="mt-10">
                 {isLoading ? (
                     <Loader/>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from '../components/Head'
 import Layout from './../Layout/Layout'
+import aboutUsImg from '../images/mobile.png'
 import {useTranslation} from "react-i18next"
 
 function AboutUs() {
@@ -13,7 +14,7 @@ function AboutUs() {
                     <div className="grid grid-flow-row xl:grid-cols-2 gap-4 xl:gap-16 items-center">
                         <div>
                             <h3 className="text-xl lg:text-3xl mb-4 font-semibold">
-                                Welcome to our NewMoviess
+                                Welcome to our NewMoviess1
                             </h3>
                             <div className="mt-3 text-sm leading-8 text-text">
                                 <p>
@@ -55,8 +56,9 @@ function AboutUs() {
                                 </div>
                             </div>
                         </div>
+                        {/*TODO: remove incorrect path*/}
                         <img
-                            src="/images/about2.jpg"
+                            src={aboutUsImg}
                             alt="aboutus"
                             className="w-full xl:block hidden h-header rounded-lg object-cover"
                         />

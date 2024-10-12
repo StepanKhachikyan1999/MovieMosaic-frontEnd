@@ -50,7 +50,7 @@ const Rows = (movie: { image: string | undefined; name: string | number | boolea
                             disabled={progress > 0 && progress < 100}
                             className="border border-border bg-dry flex-rows gap-2 text-border rounded py-1 px-2"
                         >
-                            Download <FaCloudDownloadAlt className="text-green-500"/>
+                            Download1 <FaCloudDownloadAlt className="text-green-500"/>
                         </button>
                         <Link
                             to={`/movie/${movie?._id}`}

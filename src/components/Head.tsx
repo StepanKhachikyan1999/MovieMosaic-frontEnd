@@ -1,10 +1,11 @@
 import React from 'react'
+import hearImg from '../images/mobile.png'
 
 function Head({title}: any) {
     return (
         <div className="w-full bg-deepGray lg:h-64 h-40 relative overflow-hidden rounded-md">
             <img
-                src="/images/head.png"
+                src={hearImg}
                 alt="aboutus"
                 className="w-full h-full object-cover"
             />

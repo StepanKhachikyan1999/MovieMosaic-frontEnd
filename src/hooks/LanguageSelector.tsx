@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from 'react-i18next';
 import arm from '../logos/armenia.png';
-import rus from '../logos/russia.png';
-import eng from '../logos/united-kingdom.png';
 
 interface Language {
     label: string;
@@ -11,9 +9,9 @@ interface Language {
 }
 
 const LANGUAGES: Language[] = [
-    {label: 'EN', code: 'en', img: eng},
+    // {label: 'EN', code: 'en', img: eng},
     {label: 'AM', code: 'am', img: arm},
-    {label: 'RU', code: 'ru', img: rus},
+    // {label: 'RU', code: 'ru', img: rus},
 ];
 
 function LanguageSelector() {
@@ -24,7 +22,7 @@ function LanguageSelector() {
         const storedLanguage = localStorage.getItem('language');
         if (!storedLanguage) {
             // Set default language to 'en' if not already set
-            localStorage.setItem('language', 'en');
+            localStorage.setItem('language', 'am');
         } else if (LANGUAGES.some(lang => lang.code === storedLanguage)) {
             // Change language to the one stored in local storage
             i18n.changeLanguage(storedLanguage);

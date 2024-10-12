@@ -1,6 +1,5 @@
 import React from "react";
 import Footer from "./Footer/Footer";
-import MobileFooter from "./Footer/MobileFooter";
 import NavBar from "./Navbar/Navbar";
 
 function Layout({children}: any) {
@@ -11,7 +10,7 @@ function Layout({children}: any) {
                 {children}
                 <Footer/>
                 {/* mobile footer */}
-                <MobileFooter/>
+                {/*<MobileFooter/>*/}
             </div>
         </>
     );
