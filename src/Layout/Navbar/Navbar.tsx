@@ -15,16 +15,16 @@ import LanguageSelector from "../../hooks/LanguageSelector";
 function NavBar(): any {
     const [search, setSearch] = useState("")
     const navigate = useNavigate()
-    const { i18n, t } = useTranslation()
+    const { t } = useTranslation()
     // const { width } = useDisplaySize()
 
     // @ts-ignore
     const { userInfo } = useSelector((state) => state.userLogin);
     // @ts-ignore
     const { likedMovies } = useSelector((state) => state.userGetFavoriteMovies);
-    const hover = "hover:text-subMain transitions text-white";
+    // const hover = "hover:text-subMain transitions text-white";
     // @ts-ignore
-    const Hover = ({isActive}) => (isActive ? "text-subMain" : hover);
+    // const Hover = ({isActive}) => (isActive ? "text-subMain" : hover);
 
     const handleSearch = (e: { preventDefault: () => void }) => {
         e.preventDefault();

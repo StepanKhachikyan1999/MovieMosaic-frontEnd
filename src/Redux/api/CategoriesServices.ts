@@ -4,15 +4,24 @@ import Axios from "./Axios";
 
 // Get all categories API function
 const getCategoriesService = async () => {
-    const {data} = await Axios.get("/categories");
+    const { data } = await Axios.get("/categories");
     return data;
 };
 
 // ************ ADMIN APIs ************
 
 // create new category API function
-const createCategoryService = async (title: string, token: any) => {
-    const {data} = await Axios.post("/categories", title, {
+// const createCategoryService = async (title: string, token: any) => {
+//     const {data} = await Axios.post("/categories", title, {
+//         headers: {
+//             Authorization: `Bearer ${token}`,
+//         },
+//     });
+//     return data;
+// };
+
+const createCategoryService = async (title_ARM: string, title_ENG: string, title_RU: string, token: any) => {
+    const { data } = await Axios.post("/categories", { title_ARM, title_ENG, title_RU }, {
         headers: {
             Authorization: `Bearer ${token}`,
         },

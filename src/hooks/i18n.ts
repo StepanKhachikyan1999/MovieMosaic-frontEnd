@@ -4,7 +4,7 @@ import { initReactI18next } from 'react-i18next'
 //use the initReactI18next plugin with i18next to make it easier for
 //internationalization of react app easier
 i18n.use(initReactI18next).init({
-    lng: "ARN", //default language
+    lng: "ARM", //default language
     fallbackLng: "ARM", //lang that will be loaded in case the translations the user is looking for are not available
     interpolation: {
         escapeValue: false,//used to escape the values and avoid XSS attacks, we will set it to false, because React already does it by default
