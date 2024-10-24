@@ -1,45 +1,60 @@
 import i18n from 'i18next'
-import {initReactI18next} from 'react-i18next'
+import { initReactI18next } from 'react-i18next'
 
 //use the initReactI18next plugin with i18next to make it easier for
 //internationalization of react app easier
 i18n.use(initReactI18next).init({
-    lng: "en", //default language
-    fallbackLng: "en", //lang that will be loaded in case the translations the user is looking for are not available
+    lng: "ARN", //default language
+    fallbackLng: "ARM", //lang that will be loaded in case the translations the user is looking for are not available
     interpolation: {
         escapeValue: false,//used to escape the values and avoid XSS attacks, we will set it to false, because React already does it by default
     },
     resources: { //an object with the translations to be used in the application
-        en: {
+        ENG: {
             translation: {
                 movies: "movies",
+                serials: "Serials",
+                cartoons: "Cartoons",
                 about: "about us",
                 contact: "contact us",
-                searchMovieName: "Search Movies",
+                blog: "Blog",
+                wishList: "Wish list",
+                searchMovieName: "Search ․․․",
                 watch: "Watch",
                 aboutUs: "About Us",
+                login: "Login",
                 user: "My name is: {{name}}"
             },
         },
-        am: {
+        ARM: {
             translation: {
                 movies: "ֆիլմեր",
+                serials: "Սերիալներ",
+                cartoons: "Մուլտեր",
                 about: "Մեր մասին",
                 contact: "կապ",
-                searchMovieName: "Ֆիլմերի որոնում",
+                blog: "Բլոգ",
+                wishList: "Ընտրվածների ցանկ",
+                searchMovieName: "Որոնում ․․․",
                 watch: "Դիտել",
                 aboutUs: "Մեր Մասին",
+                login: "Մուտք",
                 user: "Mi nombre es: {{name}}"
             },
         },
-        ru: {
+        RU: {
             translation: {
                 movies: "фильмы",
+                serials: "Сериалы",
+                cartoons: "мультики",
                 about: "о нас",
                 contact: "контакт",
-                searchMovieName: "Найдите названия фильмов здесь",
+                blog: "Блог",
+                wishList: "список пожеланий",
+                searchMovieName: "Найдите названия фильмов здесь ․․․",
                 watch: "Смотреть",
                 aboutUs: "О нас",
+                login: "Вход",
                 user: "Mi chiamo: {{name}}"
             },
         },

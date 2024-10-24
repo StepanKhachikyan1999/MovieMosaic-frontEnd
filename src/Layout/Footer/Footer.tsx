@@ -118,21 +118,22 @@ function Footer() {
             {/*    </div>*/}
             {/*</div>*/}
 
-            {/*<div style={{*/}
-            {/*    color: 'white',*/}
-            {/*    textAlign: 'center',*/}
-            {/*    padding: '5px'*/}
-            {/*}}>*/}
-            {/*    created by <a style={{*/}
-            {/*    color: '#046381',*/}
-            {/*    fontSize: '15px'*/}
-            {/*}} target='_blank' href="https://meekz-it.vercel.app/">MeekzIT</a>*/}
-            {/*</div>*/}
 
             <footer className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 py-6 pl-4 pr-4 text-center md:justify-between">
                 <Typography color="blue-gray" className="font-normal">
-                    &copy; 2024 Material Tailwind
+                    &copy; 2024 filmhouse.am
+                    <div style={{
+                        color: 'white',
+                        textAlign: 'center',
+                        padding: '5px'
+                    }}>
+                        created by <a style={{
+                        color: '#046381',
+                        fontSize: '15px'
+                    }} target='_blank' href="https://meekz-it.vercel.app/">MeekzIT</a>
+                    </div>
                 </Typography>
+
                 <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
                     <li>
                         <Typography
