@@ -105,7 +105,24 @@ function NavBar(): any {
                     {t('wishList')}
                 </NavLink>
             </Typography>
-
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="flex items-center gap-x-2 p-1 font-medium lg:hidden"
+            >
+                <NavLink to="/login" className="hover:text-subMain transitions text-white flex items-center lg:hidden">
+                    <Button variant="text" size="sm" className='p-0'>{t('login')}</Button>
+                </NavLink>
+            </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="flex p-0 items-center gap-x-2 p-1 font-medium lg:hidden"
+            >
+                <LanguageSelector />
+            </Typography>
         </ul>
     );
 
@@ -141,7 +158,9 @@ function NavBar(): any {
                                     {likedMovies?.length || 0}
                                 </div>
                             </NavLink>
-                            <LanguageSelector />
+                            <div className='hidden lg:flex'>
+                                <LanguageSelector />
+                            </div>
                         </div>
                         <IconButton variant="text" className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden mr-3 -mt-4" ripple={false} onClick={() => setOpenNav(!openNav)}>
                             {openNav ? (
@@ -157,10 +176,6 @@ function NavBar(): any {
                     </div>
                     <MobileNav open={openNav}>
                         {navList}
-                        <div className="flex items-center gap-x-1">
-                            <Button fullWidth variant="text" size="sm">{t('login')}</Button>
-                            <Button fullWidth variant="gradient" size="sm">Sign Up</Button>
-                        </div>
                     </MobileNav>
                 </Navbar>
             </>
