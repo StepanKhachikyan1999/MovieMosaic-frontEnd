@@ -23,6 +23,8 @@ i18n.use(initReactI18next).init({
                 watch: "Watch",
                 aboutUs: "About Us",
                 login: "Login",
+                comingSoon: "Coming Soon",
+                backToHome: "Back to home",
                 user: "My name is: {{name}}"
             },
         },
@@ -39,6 +41,8 @@ i18n.use(initReactI18next).init({
                 watch: "Դիտել",
                 aboutUs: "Մեր Մասին",
                 login: "Մուտք",
+                comingSoon: "Շուտով",
+                backToHome: "Վերադառնալ",
                 user: "Mi nombre es: {{name}}"
             },
         },
@@ -55,6 +59,8 @@ i18n.use(initReactI18next).init({
                 watch: "Смотреть",
                 aboutUs: "О нас",
                 login: "Вход",
+                comingSoon: "Вскоре",
+                backToHome: "Вернуться домой",
                 user: "Mi chiamo: {{name}}"
             },
         },

@@ -81,9 +81,9 @@ function NavBar(): any {
                 color="blue-gray"
                 className="flex items-center gap-x-2 p-1 font-medium"
             >
-                <a href="#" className="flex items-center">
+                <NavLink to="/coming-soon" className="hover:text-subMain transitions text-white flex items-center">
                     {t('cartoons')}
-                </a>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -95,9 +95,17 @@ function NavBar(): any {
                     {t('blog')}
                 </a>
             </Typography>
-            <NavLink to="/favorites" className="hover:text-subMain transitions text-white flex items-center lg:hidden">
-                {t('wishList')}
-            </NavLink>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="flex items-center gap-x-2 p-1 font-medium"
+            >
+                <NavLink to="/favorites" className="hover:text-subMain transitions text-white flex items-center lg:hidden">
+                    {t('wishList')}
+                </NavLink>
+            </Typography>
+
         </ul>
     );
 

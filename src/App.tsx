@@ -30,6 +30,7 @@ import {getAllMoviesAction} from "./Redux/Actions/MoviesActions";
 import {getFavoriteMoviesAction} from "./Redux/Actions/userActions";
 import toast from "react-hot-toast";
 import EditMovie from "./Screens/Dashboard/Admin/EditMovie";
+import ComingSoon from "./Screens/ComingSoon";
 
 function App() {
     Aos.init();
@@ -66,16 +67,17 @@ function App() {
                 <ScrollOnTop>
                     <Routes>
                         {/* ************ PUBLIC ROUTERS *************** */}
-                        <Route path="/" element={<HomeScreen/>}/>
-                        <Route path="/about-us" element={<AboutUs/>}/>
-                        <Route path="/contact-us" element={<ContactUs/>}/>
-                        <Route path="/movies" element={<MoviesPage/>}/>
-                        <Route path="/movies/:search" element={<MoviesPage/>}/>
-                        <Route path="/movie/:id" element={<SingleMovie/>}/>
-                        <Route path="/watch/:id" element={<WatchPage/>}/>
-                        <Route path="/login" element={<Login/>}/>
-                        <Route path="/register" element={<Register/>}/>
-                        <Route path="*" element={<NotFound/>}/>
+                        <Route path="/" element={<HomeScreen />}/>
+                        <Route path="/about-us" element={<AboutUs />}/>
+                        <Route path="/contact-us" element={<ContactUs />}/>
+                        <Route path="/movies" element={<MoviesPage />}/>
+                        <Route path="/movies/:search" element={<MoviesPage />}/>
+                        <Route path="/movie/:id" element={<SingleMovie />}/>
+                        <Route path="/watch/:id" element={<WatchPage />}/>
+                        <Route path="/login" element={<Login />}/>
+                        <Route path="/register" element={<Register />}/>
+                        <Route path="*" element={<NotFound />}/>
+                        <Route path="/coming-soon" element={<ComingSoon />}/>
                         {/* ************ PRIVATE PUBLIC ROUTERS *************** */}
                         <Route element={<ProtectedRouter/>}>
                             <Route path="/profile" element={<Profile/>}/>
