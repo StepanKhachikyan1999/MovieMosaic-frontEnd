@@ -10,10 +10,12 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {InlineError} from "../components/Notfications/Error";
 import {loginAction} from "../Redux/Actions/userActions";
 import toast from "react-hot-toast";
+import { useTranslation } from 'react-i18next'
 
 function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { t } = useTranslation()
 
     const {isLoading, isError, userInfo, isSuccess} = useSelector(
         // @ts-ignore
@@ -58,15 +60,15 @@ function Login() {
                     onSubmit={handleSubmit(onSubmit)}
                     className="w-full 2xl:w-2/5 gap-8 flex-colo p-8 sm:p-14 md:w-3/5 bg-dry  rounded-lg border border-border"
                 >
-                    <img
-                        src="/images/logo.png"
-                        alt="logo"
-                        className="w-full h-12 object-contain"
-                    />
+                    {/*<img*/}
+                    {/*    src="/images/logo.png"*/}
+                    {/*    alt="logo"*/}
+                    {/*    className="w-full h-12 object-contain"*/}
+                    {/*/>*/}
                     <div className="w-full">
                         <Input
-                            label="Email"
-                            placeholder="netflixo@gmail.com"
+                            label={t('email')}
+                            placeholder={t('email')}
                             type="email"
                             name="email"
                             register={register("email")}
@@ -77,8 +79,8 @@ function Login() {
 
                     <div className="w-full">
                         <Input
-                            label="Password"
-                            placeholder="*******"
+                            label= {t('password')}
+                            placeholder={t('password')}
                             type="password"
                             bg={true}
                             name="password"
@@ -98,15 +100,15 @@ function Login() {
                                 "Loading..."
                             ) : (
                                 <>
-                                    <FiLogIn/> Sign In
+                                    <FiLogIn/> {t('signIn')}
                                 </>
                             )
                         }
                     </button>
                     <p className="text-center text-border">
-                        Don't have an account?{" "}
+                        {t('dontHaveAnAccount')}{" "}
                         <Link to="/register" className="text-dryGray font-semibold ml-2">
-                            Sign Up
+                            {t('signUp')}
                         </Link>
                     </p>
                 </form>

@@ -18,13 +18,11 @@ export const getAllCategoriesAction = () => async (dispatch: any) => {
 };
 
 // Create Category action
-export const createCategoryAction = (title_ARM: string, title_ENG: string, title_RU: string,) => async (dispatch: any, getState: any) => {
+export const createCategoryAction = (title: string) => async (dispatch: any, getState: any) => {
     try {
         dispatch({type: CategoriesConstants.CREATE_CATEGORY_REQUEST});
         await categoriesAPIs.createCategoryService(
-            title_ARM,
-            title_ENG,
-            title_RU,
+            title,
             tokenProtection(getState)
         );
         dispatch({type: CategoriesConstants.CREATE_CATEGORY_SUCCESS});

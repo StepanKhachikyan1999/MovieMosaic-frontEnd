@@ -6,7 +6,7 @@ import CategoryModal from "../../../components/Modals/CategoryModal";
 import {useDispatch, useSelector} from "react-redux";
 import {deleteCategoryAction} from "../../../Redux/Actions/CategoriesActions";
 import Loader from "../../../components/Notfications/Loader";
-import {Empty} from "../../../components/Notfications/Empty";
+import { Empty } from "../../../components/Notfications/Empty";
 import toast from "react-hot-toast";
 
 function Categories() {

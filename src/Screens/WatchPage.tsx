@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import { BiArrowBack } from "react-icons/bi";
@@ -20,6 +20,8 @@ function WatchPage() {
   let { id } = useParams();
   const dispatch = useDispatch();
   const [play, setPlay] = useState(false);
+  const videoRef = useRef(null);
+
   // @ts-ignore
   const { progress, setprogress } = useContext(SidebarContext);
   const sameClass = "w-full gap-6 flex-colo min-h-screen";
@@ -53,6 +55,21 @@ function WatchPage() {
     // @ts-ignore
     dispatch(getMovieByIdAction(id));
   }, [dispatch, id]);
+
+  // const handleFullScreen = () => {
+  //   const video = videoRef.current;
+  //   if (video) {
+  //     if (video.requestFullscreen) {
+  //       video.requestFullscreen();
+  //     } else if (video.mozRequestFullScreen) { /* Firefox */
+  //       video.mozRequestFullScreen();
+  //     } else if (video.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+  //       video.webkitRequestFullscreen();
+  //     } else if (video.msRequestFullscreen) { /* IE/Edge */
+  //       video.msRequestFullscreen();
+  //     }
+  //   }
+  // };
 
   return (
     <Layout>
@@ -99,13 +116,16 @@ function WatchPage() {
           <iframe
             src={movie.video}
             className="w-full h-full rounded"
-            style={{ minHeight: "900px" }}
+            style={{ minHeight: "60vh" }}
             title={movie.name}
+            ref={videoRef}
+            controls
+            autoPlay={play}
             frameBorder="0"
              scrolling="no"
              // @ts-ignore
              allowFullScreen=""
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
           ></iframe>
         ) : (
           <div className="w-full h-screen rounded-lg overflow-hidden relative">

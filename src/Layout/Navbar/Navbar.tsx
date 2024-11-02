@@ -71,9 +71,9 @@ function NavBar(): any {
                 color="blue-gray"
                 className="flex items-center gap-x-2 p-1 font-medium"
             >
-                <a href="#" className="flex items-center">
+                <NavLink to="/coming-soon" className="hover:text-subMain transitions text-white flex items-center">
                     {t('serials')}
-                </a>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
@@ -91,9 +91,9 @@ function NavBar(): any {
                 color="blue-gray"
                 className="flex items-center gap-x-2 p-1 font-medium"
             >
-                <a aria-disabled={true} href="#" className="flex items-center">
+                <NavLink to="/coming-soon" className="hover:text-subMain transitions text-white flex items-center">
                     {t('blog')}
-                </a>
+                </NavLink>
             </Typography>
             <Typography
                 as="li"
