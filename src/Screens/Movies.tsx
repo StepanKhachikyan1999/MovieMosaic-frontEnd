@@ -1,20 +1,20 @@
-import React, {useEffect, useMemo, useState} from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Filters from "../components/Filters";
 import Layout from "../Layout/Layout";
 import Movie from "../components/Movie";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
-import {TbPlayerTrackNext, TbPlayerTrackPrev} from "react-icons/tb";
+import { TbPlayerTrackNext, TbPlayerTrackPrev } from "react-icons/tb";
 import Loader from "../components/Notfications/Loader";
-import {RiMovie2Line} from "react-icons/ri";
-import {getAllMoviesAction} from "../Redux/Actions/MoviesActions";
-import {LanguageData, RatesData, TimesData, YearData,} from "../Data/FilterData";
-import {useParams} from "react-router-dom";
+import { RiMovie2Line } from "react-icons/ri";
+import { getAllMoviesAction } from "../Redux/Actions/MoviesActions";
+import { LanguageData, RatesData, TimesData, YearData } from "../Data/FilterData";
+import { useParams } from "react-router-dom";
 
 function MoviesPage() {
     const {search} = useParams();
     const dispatch = useDispatch();
-    const [category, setCategory] = useState({title: "All Categories"});
+    const [category, setCategory] = useState({title: "allCategories"});
     const [year, setYear] = useState(YearData[0]);
     const [times, setTimes] = useState(TimesData[0]);
     const [rates, setRates] = useState(RatesData[0]);
@@ -33,7 +33,7 @@ function MoviesPage() {
     // queries
     const queries = useMemo(() => {
         const query = {
-            category: category?.title === "All Categories" ? "" : category?.title,
+            category: category?.title === "allCategories" ? "" : category?.title,
             time: times?.title.replace(/\D/g, ""),
             language: language?.title === "Sort By Language" ? "" : language?.title,
             rate: rates?.title.replace(/\D/g, ""),

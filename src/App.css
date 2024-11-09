@@ -297,6 +297,27 @@ select:focus {
     transform: translateY(-5px) rotate(-45deg);
 }
 
+#scroll-style::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#scroll-style::-webkit-scrollbar
+{
+    width: 8px;
+    background-color: #F5F5F5;
+}
+
+#scroll-style::-webkit-scrollbar-thumb
+{
+    /*border-radius: 2px;*/
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #17224c;
+}
+
+
 @media (min-width: 480px) {
     .drawer .drawer-content-wrapper {
         width: 420px;

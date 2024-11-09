@@ -1,9 +1,11 @@
-import React, {Fragment} from 'react'
-import {Listbox, Transition} from '@headlessui/react'
-import {FaAngleDown, FaCheck} from 'react-icons/fa'
-import {LanguageData, RatesData, TimesData, YearData,} from '../Data/FilterData'
+import React, { Fragment } from 'react'
+import { Listbox, Transition } from '@headlessui/react'
+import { FaAngleDown, FaCheck } from 'react-icons/fa'
+import { LanguageData, RatesData, TimesData, YearData } from '../Data/FilterData'
+import { useTranslation } from 'react-i18next'
 
 function Filters(props: any) {
+    const { t } = useTranslation()
     const {
         categories,
         category,
@@ -24,7 +26,7 @@ function Filters(props: any) {
             onChange: setCategory,
             items:
                 categories?.length > 0
-                    ? [{title: "All Categories"}, ...categories]
+                    ? [{title: "allCategories"}, ...categories]
                     : [{title: "No category found"}],
         },
         {
@@ -57,7 +59,9 @@ function Filters(props: any) {
                     <div className="relative">
                         <Listbox.Button
                             className="relative border border-gray-800  w-full text-white bg-main rounded-lg cursor-default py-4 pl-6 pr-10 text-left text-xs">
-                            <span className="block truncate">{item.value.title}</span>
+                            <span className="block truncate">
+                                {t(`filters.${item.value.title}`)}
+                            </span>
                             <span className="absolute inset-y-0 right-0 flex items-center pointer-events-none pr-2">
                 <FaAngleDown className="h-4 w-4" aria-hidden="true"/>
               </span>
@@ -69,6 +73,7 @@ function Filters(props: any) {
                             leaveTo="opacity-0"
                         >
                             <Listbox.Options
+                                id='scroll-style'
                                 className="absolute z-10 mt-1 w-full bg-white border border-gray-800 text-dryGray rounded-md shadow-lg max-h-60 py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                                 {item.items.map((iterm: any, i: any) => (
                                     <Listbox.Option
@@ -87,7 +92,7 @@ function Filters(props: any) {
                                 selected ? "font-semibold" : "font-normal"
                             }`}
                         >
-                          {iterm.title}
+                         {t(`filters.${iterm.title}`)}
                         </span>
                                                 {selected ? (
                                                     <span className="absolute inset-y-0 left-0 flex items-center pl-3">
