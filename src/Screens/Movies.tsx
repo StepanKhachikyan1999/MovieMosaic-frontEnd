@@ -35,7 +35,7 @@ function MoviesPage() {
         const query = {
             category: category?.title === "allCategories" ? "" : category?.title,
             time: times?.title.replace(/\D/g, ""),
-            language: language?.title === "Sort By Language" ? "" : language?.title,
+            language: language?.title === "sortByLanguage" ? "" : language?.title,
             rate: rates?.title.replace(/\D/g, ""),
             year: year?.title.replace(/\D/g, ""),
             search: search ? search : "",

@@ -79,7 +79,7 @@ function Filters(props: any) {
                                     <Listbox.Option
                                         key={i}
                                         className={({active}) =>
-                                            `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                            `relative cursor-default select-none cursor-pointer py-2 pl-10 pr-4 ${
                                                 active ? "bg-subMain text-white" : "text-main"
                                             }`
                                         }

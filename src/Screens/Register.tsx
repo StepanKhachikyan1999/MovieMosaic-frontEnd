@@ -1,17 +1,19 @@
-import React, {useEffect} from 'react'
-import {Link, useNavigate} from 'react-router-dom'
-import {Input} from '../components/UsedInputs'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Input } from '../components/UsedInputs'
 import Layout from '../Layout/Layout'
-import {FiLogIn} from "react-icons/fi";
-import {InlineError} from "../components/Notfications/Error";
+import { FiLogIn } from "react-icons/fi";
+import { InlineError } from "../components/Notfications/Error";
 import toast from "react-hot-toast";
-import {registerAction} from "../Redux/Actions/userActions";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {RegisterValidation} from "../components/Validation/UserValidation";
-import {useForm} from "react-hook-form";
-import {useDispatch, useSelector} from "react-redux";
+import { registerAction } from "../Redux/Actions/userActions";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { RegisterValidation } from "../components/Validation/UserValidation";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from 'react-i18next'
 
-function Register() {
+function Register() {const { t } = useTranslation()
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -58,15 +60,10 @@ function Register() {
                     onSubmit={handleSubmit(onSubmit)}
                     className="w-full 2xl:w-2/5 gap-8 flex-colo p-8 sm:p-14 md:w-3/5 bg-dry  rounded-lg border border-border"
                 >
-                    <img
-                        src="/images/logo.png"
-                        alt="logo"
-                        className="w-full h-12 object-contain"
-                    />
                     <div className="w-full">
                         <Input
-                            label="FullName"
-                            placeholder="NewMoviess React Tailwind"
+                            label={t("fullName")}
+                            placeholder={t("fullName")}
                             type="text"
                             bg={true}
                             name="fullName"
@@ -77,8 +74,8 @@ function Register() {
 
                     <div className="w-full">
                         <Input
-                            label="Email"
-                            placeholder="netflixo@gmail.com"
+                            label={t('email')}
+                            placeholder={t('email')}
                             type="email"
                             name="email"
                             register={register("email")}
@@ -88,8 +85,8 @@ function Register() {
                     </div>
                     <div className="w-full">
                         <Input
-                            label="Password"
-                            placeholder="*******"
+                            label={t("password")}
+                            placeholder={t("password")}
                             type="password"
                             bg={true}
                             name="password"
@@ -109,15 +106,15 @@ function Register() {
                                 "Loading..."
                             ) : (
                                 <>
-                                    <FiLogIn/> Sign Up
+                                    <FiLogIn/> {t('signUp')}
                                 </>
                             )
                         }
                     </button>
                     <p className="text-center text-border">
-                        Already have an account?{" "}
+                        {t('alreadyHaveAnAccount')}{" "}
                         <Link to="/login" className="text-dryGray font-semibold ml-2">
-                            Sign In
+                            {t('signIn')}
                         </Link>
                     </p>
                 </form>

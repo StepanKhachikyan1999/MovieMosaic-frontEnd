@@ -1,35 +1,31 @@
 export const LanguageData = [
-    {title: "Sort By Language"},
+    {title: "sortByLanguage"},
     {title: "English"},
     {title: "Russian"},
     {title: "Armenian"},
 ];
 
 export const RatesData = [
-    {title: "Sort By Rates"},
-    {title: "1 Star"},
-    {title: "2 Star"},
-    {title: "3 Star"},
-    {title: "4 Star"},
-    {title: "5 Star"},
+    {title: "sortByRates"},
+    {title: "1"},
+    {title: "2"},
+    {title: "3"},
+    {title: "4"},
+    {title: "5"},
 ];
 
 export const TimesData = [
-    {title: "Sort By Hours"},
-    {title: "1 Hours"},
-    {title: "2 Hours"},
-    {title: "3 Hours"},
-    {title: "4 Hours"},
-    {title: "5 Hours"},
-    {title: "6 Hours"},
-    {title: "7 Hours"},
-    {title: "8 Hours"},
-    {title: "9 Hours"},
-    {title: "10 Hours"},
+    {title: "sortByHours"},
+    {title: "100"},
+    {title: "101"},
+    {title: "102"},
+    {title: "103"},
 ];
 
 export const YearData = [
-    {title: "Sort By Year"},
+    {title: "sortByYear"},
+    {title: "2024"},
+    {title: "2023"},
     {title: "2022"},
     {title: "2021"},
     {title: "2020"},
