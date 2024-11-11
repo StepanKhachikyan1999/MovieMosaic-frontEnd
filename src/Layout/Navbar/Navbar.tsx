@@ -133,13 +133,13 @@ function NavBar(): any {
                         <Link to='/'>
                             <Typography as="a" href="#" className="mr-4 cursor-pointer py-1.5 font-medium">LOGO</Typography>
                         </Link>
-                        <form onSubmit={handleSearch} className="w-1/2 text-sm bg-dryGray rounded flex gap-4 hidden lg:flex">
+                        <form onSubmit={handleSearch} className="w-1/2 text-sm bg-dryGray rounded flex gap-4 hidden lg:flex md:max-w-sm">
                             <button type="submit" className="bg-subMain w-12 flex justify-center items-center h-12 rounded text-white">
                                 <FaSearch />
                             </button>
                             <input type="search" value={search} onChange={(e) => setSearch(e.target.value)}
                                    placeholder={t('searchMovieName')}
-                                   className="font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-2 text-black" />
+                                   className="font-medium placeholder:text-border text-sm w-11/12 h-12 bg-transparent border-none px-2 text-black md:max-w-sm" />
                         </form>
                         <div className="hidden lg:block">{navList}</div>
                         <div className="flex items-center gap-x-1">
