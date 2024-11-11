@@ -1,15 +1,17 @@
 import React from 'react'
 import Titles from '../Titles'
-import {BsCollectionFill} from 'react-icons/bs'
+import { BsCollectionFill } from 'react-icons/bs'
 import Movie from '../Movie'
 import Loader from '../Notfications/Loader'
-import {Empty} from '../Notfications/Empty'
+import { Empty } from '../Notfications/Empty'
+import { useTranslation } from 'react-i18next'
 
 function PopularMovies({isLoading, movies}: any) {
+    const { t } = useTranslation()
     return (
         <div className="my-16">
             {/*<Titles title="Popular Movies" Icon={BsCollectionFill}/>*/}
-            <Titles title="Հանրաճանաչ ֆիլմեր" Icon={BsCollectionFill}/>
+            <Titles title={t('popularMovies')} Icon={BsCollectionFill}/>
             {isLoading ? (
                 <Loader/>
             ) : movies?.length > 0 ? (

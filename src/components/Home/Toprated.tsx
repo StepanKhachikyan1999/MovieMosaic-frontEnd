@@ -7,9 +7,10 @@ import {FaHeart} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import Rating from "../Stars";
 import Loader from "../Notfications/Loader";
-import {Empty} from "../Notfications/Empty";
-import {useDispatch, useSelector} from "react-redux";
-import {IfMovieLiked, LikeMovie} from "../../Context/Functionalities";
+import { Empty } from "../Notfications/Empty";
+import { useDispatch, useSelector } from "react-redux";
+import { IfMovieLiked, LikeMovie } from "../../Context/Functionalities";
+import { useTranslation } from 'react-i18next'
 
 const SwiperTop = ({prevEl, nextEl, movies}: any) => {
     // @ts-ignore
@@ -86,6 +87,7 @@ const SwiperTop = ({prevEl, nextEl, movies}: any) => {
 };
 
 function TopRated({movies, isLoading}: any) {
+    const { t } = useTranslation()
     const [nextEl, setNextEl] = useState(null);
     const [prevEl, setPrevtEl] = useState(null);
     const classNames =
@@ -94,14 +96,14 @@ function TopRated({movies, isLoading}: any) {
     return (
         <div className="my-16">
             {/*<Titles title="Top Rated" Icon={BsBookmarkStarFill}/>*/}
-            <Titles title="Ամենավարկանիշային ֆիլմեր" Icon={BsBookmarkStarFill}/>
+            <Titles title={t('popularMovies')} Icon={BsBookmarkStarFill}/>
             <div className="mt-10">
                 {isLoading ? (
                     <Loader/>
                 ) : movies?.length > 0 ? (
                     <SwiperTop nextEl={nextEl} prevEl={prevEl} movies={movies}/>
                 ) : (
-                    <Empty message="It seem's like we dont have any movie"/>
+                    <Empty message={t('dontHaveAnyMovie')}/>
                 )}
                 <div className="w-full px-1 flex-rows gap-6 pt-12">
                     <button className={classNames} ref={(node) => setPrevtEl(node as any)}>
