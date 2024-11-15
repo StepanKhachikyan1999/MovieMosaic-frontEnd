@@ -18,6 +18,7 @@ const SwiperTop = ({prevEl, nextEl, movies}: any) => {
     const dispatch = useDispatch()
     // @ts-ignore
     const {userInfo} = useSelector((state) => state.userLogin)
+    const lang = localStorage.getItem('language')
 
     // if liked function
     const isLiked = (movie: any) => {
@@ -73,7 +74,8 @@ const SwiperTop = ({prevEl, nextEl, movies}: any) => {
                                 className="font-semibold text-xl trancuted line-clamp-2"
                                 to={`/movie/${movie?._id}`}
                             >
-                                {movie?.name}
+                                {/*// @ts-ignore*/}
+                                {movie && movie[`name_${lang}`]}
                             </Link>
                             <div className="flex gap-2 text-star">
                                 <Rating value={movie?.rate}/>

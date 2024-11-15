@@ -22,7 +22,7 @@ const countries = [
 ];
 
 function LanguageSelector() {
-    const {i18n} = useTranslation();
+    const { i18n } = useTranslation();
     const defaultLanguage = localStorage.getItem('language')
     const [openMenu, setOpenMenu] = useState(false);
     const [lang, setLang] = useState(defaultLanguage || "ARM");

@@ -10,6 +10,7 @@ import { RiMovie2Line } from "react-icons/ri";
 import { getAllMoviesAction } from "../Redux/Actions/MoviesActions";
 import { LanguageData, RatesData, TimesData, YearData } from "../Data/FilterData";
 import { useParams } from "react-router-dom";
+import { useTranslation } from 'react-i18next'
 
 function MoviesPage() {
     const {search} = useParams();
@@ -29,6 +30,7 @@ function MoviesPage() {
     // get all categories
     // @ts-ignore
     const {categories} = useSelector((state) => state.categoryGetAll);
+    const { t } = useTranslation()
 
     // queries
     const queries = useMemo(() => {
@@ -136,7 +138,7 @@ function MoviesPage() {
                             <RiMovie2Line/>
                         </div>
                         <p className="text-border text-sm">
-                            It seem's like we dont have any movie
+                            {t('dontHaveAnyMovie')}
                         </p>
                     </div>
                 )}

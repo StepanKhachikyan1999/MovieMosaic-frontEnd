@@ -1,8 +1,8 @@
 import React from 'react'
-import {Link} from "react-router-dom";
-import {FaHeart} from "react-icons/fa";
-import {useDispatch, useSelector} from "react-redux";
-import {IfMovieLiked, LikeMovie} from "../Context/Functionalities";
+import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { IfMovieLiked, LikeMovie } from "../Context/Functionalities";
 
 function Movie({movie}: any) {
     // @ts-ignore
@@ -10,6 +10,7 @@ function Movie({movie}: any) {
     const dispatch = useDispatch()
     // @ts-ignore
     const {userInfo} = useSelector((state) => state.userLogin)
+    const lang = localStorage.getItem('language')
 
     // if liked function
     const isLiked = IfMovieLiked(movie)
@@ -25,7 +26,9 @@ function Movie({movie}: any) {
                 </Link>
                 <div
                     className="absolute flex-btn gap-2 bottom-0 right-0 left-0 bg-main bg-opacity-60 text-white px-4 py-3">
-                    <h3 className="font-semibold truncate">{movie?.name}</h3>
+                    <h3 className="font-semibold truncate">
+                        {movie && movie[`name_${lang}`]}
+                    </h3>
                     <button
                         // @ts-ignore
                         onClick={() => LikeMovie(movie, dispatch, userInfo)}

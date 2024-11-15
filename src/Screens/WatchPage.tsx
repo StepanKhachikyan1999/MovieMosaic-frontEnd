@@ -8,7 +8,7 @@ import { getMovieByIdAction } from "../Redux/Actions/MoviesActions";
 import Loader from "../components/Notfications/Loader";
 import { RiMovie2Line } from "react-icons/ri";
 import {
-  DownloadVideo,
+  // DownloadVideo,
   IfMovieLiked,
   LikeMovie,
 } from "../Context/Functionalities";
@@ -21,6 +21,8 @@ function WatchPage() {
   const dispatch = useDispatch();
   const [play, setPlay] = useState(false);
   const videoRef = useRef(null);
+  const lang = localStorage.getItem('language')
+
 
   // @ts-ignore
   const { progress, setprogress } = useContext(SidebarContext);
@@ -30,7 +32,7 @@ function WatchPage() {
     // @ts-ignore
     (state) => state.getMovieById
   );
-  console.log(movie, 'movie')
+  // console.log(movie, 'movie')
   const { isLoading: likeLoading } = useSelector(
     // @ts-ignore
     (state) => state.userLikeMovie
@@ -80,7 +82,7 @@ function WatchPage() {
               to={`/movie/${movie?._id}`}
               className="md:text-xl text-sm flex gap-3 items-center font-bold text-dryGray"
             >
-              <BiArrowBack /> {movie?.name}
+              <BiArrowBack /> {movie && movie[`name_${lang}`]}
             </Link>
             <div className="flex-btn sm:w-auto w-full gap-5">
               <button
@@ -93,13 +95,13 @@ function WatchPage() {
               >
                 <FaHeart />
               </button>
-              <button
-                disabled={progress > 0 && progress < 100}
-                onClick={() => DownloadMovieVideo(movie?.video, movie?.name)}
-                className="bg-subMain flex-rows gap-2 hover:text-main transitions text-white rounded px-8 font-medium py-3 text-sm"
-              >
-                <FaCloudDownloadAlt /> 
-              </button>
+              {/*<button*/}
+              {/*  disabled={progress > 0 && progress < 100}*/}
+              {/*  onClick={() => DownloadMovieVideo(movie?.video, movie?.name)}*/}
+              {/*  className="bg-subMain flex-rows gap-2 hover:text-main transitions text-white rounded px-8 font-medium py-3 text-sm"*/}
+              {/*>*/}
+              {/*  <FaCloudDownloadAlt /> */}
+              {/*</button>*/}
             </div>
           </div>
         )}
@@ -152,7 +154,7 @@ function WatchPage() {
                 </div>
                 <img
                   src={movie?.image ? movie?.image : "images/user.png"}
-                  alt={movie?.name}
+                  alt={movie && movie[`name_${lang}`]}
                   className="w-full h-full object-cover rounded-lg"
                 />
               </>

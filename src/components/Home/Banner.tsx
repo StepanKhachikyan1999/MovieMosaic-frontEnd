@@ -5,15 +5,16 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import FlexMovieItems from '../FlexMovieItems'
 import {FaHeart} from 'react-icons/fa'
 import Loader from '../Notfications/Loader'
-import {RiMovie2Line} from 'react-icons/ri'
-import {useDispatch, useSelector} from 'react-redux'
-import {IfMovieLiked, LikeMovie} from '../../Context/Functionalities'
+import { RiMovie2Line } from 'react-icons/ri'
+import { useDispatch, useSelector } from 'react-redux'
+import { IfMovieLiked, LikeMovie } from '../../Context/Functionalities'
 
 import 'swiper/swiper-bundle.min.css'
-import {useTranslation} from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 const Swipper = ({sameClass, movies}: any) => {
     const {t} = useTranslation()
+    const lang = localStorage.getItem('language')
     // @ts-ignore
     const {isLoading} = useSelector((state) => state.userLikeMovie)
     const dispatch = useDispatch()
@@ -45,7 +46,8 @@ const Swipper = ({sameClass, movies}: any) => {
                     <div
                         className="absolute linear-bg xl:pl-52 sm:pl-32 pl-8 top-0 bottom-0 right-0 left-0 flex flex-col justify-center lg:gap-8 md:gap-5 gap-4">
                         <h1 className="xl:text-4xl truncate capitalize font-sans sm:text-2xl text-xl font-bold">
-                            {movie?.name}
+                            {/*// @ts-ignore*/}
+                            {movie && movie[`name_${lang}`]}
                         </h1>
                         <div className="flex gap-5 items-center text-dryGray">
                             <FlexMovieItems movie={movie}/>
@@ -76,6 +78,7 @@ const Swipper = ({sameClass, movies}: any) => {
 
 function Banner({movies, isLoading}: any) {
     const sameClass = "w-full flex-colo xl:h-96 bg-dry lg:h-64 h-48"
+    const { t } = useTranslation()
     return (
         <div className="relative w-full">
             {isLoading ? (
@@ -90,7 +93,7 @@ function Banner({movies, isLoading}: any) {
                         <RiMovie2Line/>
                     </div>
                     <p className="text-border text-sm">
-                        It seem's like we dont have any movie
+                        {t('dontHaveAnyMovie')}
                     </p>
                 </div>
             )}

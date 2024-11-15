@@ -6,15 +6,15 @@ import {MdDelete} from "react-icons/md";
 import {FaEdit} from "react-icons/fa";
 import {ImUpload} from "react-icons/im";
 import CastsModal from "../../../components/Modals/CastsModal";
-import {useDispatch, useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {movieValidation} from "../../../components/Validation/MovieValidation";
-import {createMovieAction, removeCastAction,} from "../../../Redux/Actions/MoviesActions";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { movieValidation } from "../../../components/Validation/MovieValidation";
+import { createMovieAction, removeCastAction } from "../../../Redux/Actions/MoviesActions";
 import toast from "react-hot-toast";
-import {InlineError} from "../../../components/Notfications/Error";
-import {Imagepreview} from "../../../components/Imagepreview";
+import { InlineError } from "../../../components/Notfications/Error";
+import { Imagepreview } from "../../../components/Imagepreview";
 
 import userImage from '../../../images/user.png'
 

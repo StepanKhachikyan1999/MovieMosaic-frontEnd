@@ -1,10 +1,13 @@
 import React from "react";
-import {FaPlay, FaShareAlt} from "react-icons/fa";
-import {Link} from "react-router-dom";
+import { FaPlay, FaShareAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import FlexMovieItems from "../FlexMovieItems";
 import Rating from "../Stars";
+import { useTranslation } from 'react-i18next'
 
 function MovieInfo({movie, setModalOpen, DownloadVideo, progress}: any) {
+    const { t } = useTranslation()
+    const lang = localStorage.getItem('language')
     return (
         <div className="w-full xl:h-screen relative text-white">
             <img
@@ -26,7 +29,7 @@ function MovieInfo({movie, setModalOpen, DownloadVideo, progress}: any) {
                         <div className="col-span-3 flex flex-col gap-10">
                             {/* Title */}
                             <h1 className="xl:text-4xl capitalize font-sans text-2xl font-bold">
-                                {movie?.name}
+                                {movie && movie[`name_${lang}`]}
                             </h1>
                             {/* flex items */}
                             <div className="flex items-center gap-4 font-medium text-dryGray">
@@ -61,7 +64,7 @@ function MovieInfo({movie, setModalOpen, DownloadVideo, progress}: any) {
                                         to={`/watch/${movie?._id}`}
                                         className="bg-dry py-4 hover:bg-subMain transitions border-2 border-subMain rounded-full flex-rows gap-4 w-full sm:py-3"
                                     >
-                                        <FaPlay className="w-3 h-3"/> Watch
+                                        <FaPlay className="w-3 h-3"/> {t('watch')}
                                     </Link>
                                 </div>
                             </div>

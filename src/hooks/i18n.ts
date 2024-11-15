@@ -119,7 +119,7 @@ i18n.use(initReactI18next).init({
                 login: "Մուտք",
                 signIn: "Մուտք",
                 signUp: "Գրանցվել",
-                popularMovies: "լավագույն վարկանիշային ֆիլմեր",
+                popularMovies: "Ամենադիտվողները",
                 topMovies: "լավագույն վարկանիշային ֆիլմեր",
                 dontHaveAnyMovie: "Կարծես ֆիլմ չունենք",
                 alreadyHaveAnAccount: "Արդեն ունե՞ք հաշիվ",
