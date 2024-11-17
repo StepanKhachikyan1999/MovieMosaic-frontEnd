@@ -9,44 +9,20 @@ import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {ReviewValidation} from "../Validation/MovieValidation";
 import toast from "react-hot-toast";
-import {InlineError} from "../Notfications/Error";
-import {Link} from "react-router-dom";
-import {reviewMovieAction} from '../../Redux/Actions/MoviesActions'
-
-const Ratings = [
-    {
-        title: "0 - Poor",
-        value: 0,
-    },
-    {
-        title: "1 - Fair",
-        value: 1,
-    },
-    {
-        title: "2 - Good",
-        value: 2,
-    },
-    {
-        title: "3 - Very Good",
-        value: 3,
-    },
-    {
-        title: "4 - Excellent",
-        value: 4,
-    },
-    {
-        title: "5 - Masterpiece",
-        value: 5,
-    },
-];
+import { InlineError } from "../Notfications/Error";
+import { Link } from "react-router-dom";
+import { reviewMovieAction } from '../../Redux/Actions/MoviesActions'
+import { useTranslation } from 'react-i18next'
 
 function MovieRates({movie}: any) {
+    const { t } = useTranslation()
     const dispatch = useDispatch();
     // use Selector
     // @ts-ignore
     const {isLoading, isError} = useSelector((state) => state.createReview)
     // @ts-ignore
     const {userInfo} = useSelector((state) => state.userLogin);
+    const lang = localStorage.getItem('language')
 
     // validate review
     const {
@@ -76,9 +52,36 @@ function MovieRates({movie}: any) {
         }
     }, [isError, dispatch]);
 
+    const Ratings = [
+        {
+            title: `0 - ${t('Ratings.poor')}`,
+            value: 0,
+        },
+        {
+            title:  `1 - ${t('Ratings.fair')}`,
+            value: 1,
+        },
+        {
+            title:  `2 - ${t('Ratings.good')}`,
+            value: 2,
+        },
+        {
+            title:  `3 - ${t('Ratings.veryGood')}`,
+            value: 3,
+        },
+        {
+            title:  `4 - ${t('Ratings.excellent')}`,
+            value: 4,
+        },
+        {
+            title:  `5 - ${t('Ratings.masterpiece')}`,
+            value: 5,
+        },
+    ];
+
     return (
         <div className="my-12">
-            <Titles title="Reviews" Icon={BsBookmarkStarFill}/>
+            <Titles title={t('review')} Icon={BsBookmarkStarFill}/>
             <div className="mt-10 xl:grid flex-colo grid-cols-5 gap-12 bg-dry xs:p-10 py-10 px-2 sm:p-20 rounded">
                 {/* write review */}
                 <form
@@ -86,15 +89,14 @@ function MovieRates({movie}: any) {
                     className="xl:col-span-2 w-full flex flex-col gap-8"
                 >
                     <h3 className="text-xl text-text font-semibold">
-                        Review "{movie?.name}"
+                        {t('review')}:  {movie && movie[`name_${lang}`]}
                     </h3>
                     <p className="text-sm leading-7 font-medium text-border">
-                        Write a review for this movie. It will be posted on this page. lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                        {t('reviewForThisMovie')}
                     </p>
                     <div className="text-sm w-full">
                         <Select
-                            label="Select Rating"
+                            label={t('selectRating')}
                             options={Ratings}
                             name="rating"
                             register={{...register("rating")}}
@@ -110,8 +112,8 @@ function MovieRates({movie}: any) {
                         <Message
                             name="comment"
                             register={{...register("comment")}}
-                            label="Message"
-                            placeholder="Make it short and sweet...."
+                            label={t('message')}
+                            placeholder={`${t('message')} ......`}
                         />
                         {errors.comment && <InlineError text={errors.comment.message}/>}
                     </div>
@@ -130,14 +132,14 @@ function MovieRates({movie}: any) {
                             to="/login"
                             className="bg-main border border-dashed border-border text-subMain py-4 w-full flex-colo rounded"
                         >
-                            Login to review this movie
+                            {t('loginToReviewThisMovie')}
                         </Link>
                     )}
                 </form>
                 {/* REVIWERS */}
                 <div className="col-span-3 flex w-full flex-col gap-6">
                     <h3 className="text-xl text-text font-semibold">
-                        Reviews ({movie?.numberOfReviews})
+                        {t('review')} ({movie?.numberOfReviews})
                     </h3>
                     <div
                         className="w-full flex flex-col bg-main gap-6 rounded-lg md:p-12 p-6 h-header overflow-y-scroll">
@@ -148,15 +150,17 @@ function MovieRates({movie}: any) {
                                     className="md:grid flex flex-col w-full grid-cols-12 gap-6 bg-dry p-4 border border-gray-800 rounded-lg"
                                 >
                                     <div className="col-span-2 bg-main hidden md:block">
-                                        <img
-                                            src={
-                                                review?.userImage
-                                                    ? review.userImage
-                                                    : "/images/user.png"
-                                            }
-                                            alt={review?.userName}
-                                            className="w-full h-24 rounded-lg object-cover"
-                                        />
+                                        {review?.userImage ? (
+                                            <img
+                                                src={review.userImage}
+                                                alt={review?.userName}
+                                                className="w-full h-24 rounded-lg object-cover"
+                                            />
+                                        ) : (
+                                            <span className="w-full h-24 rounded-lg bg-gray-200 flex items-center justify-center text-lg font-semibold text-black">
+                                          {review?.userName?.substring(0, 1).toUpperCase()}
+                                        </span>
+                                        )}
                                     </div>
                                     <div className="col-span-7 flex flex-col gap-2">
                                         <h2>{review?.userName}</h2>

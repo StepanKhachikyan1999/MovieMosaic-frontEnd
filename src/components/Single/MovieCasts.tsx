@@ -1,14 +1,16 @@
 import React from 'react'
-import {FaUserFriends} from 'react-icons/fa'
-import {Autoplay} from 'swiper'
-import {Swiper, SwiperSlide} from 'swiper/react'
+import { FaUserFriends } from 'react-icons/fa'
+import { Autoplay } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import Titles from '../Titles'
+import { useTranslation } from 'react-i18next'
 
 function MovieCasts({movie}: any) {
+    const { t } = useTranslation()
     return (
         movie?.casts?.length > 0 && (
             <div className="my-12">
-                <Titles title="Casts" Icon={FaUserFriends}/>
+                <Titles title={t('casts')} Icon={FaUserFriends}/>
                 <div className="mt-10">
                     <Swiper
                         autoplay={{

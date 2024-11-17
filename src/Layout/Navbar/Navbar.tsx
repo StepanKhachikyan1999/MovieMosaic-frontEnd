@@ -143,12 +143,25 @@ function NavBar(): any {
                         </form>
                         <div className="hidden lg:block">{navList}</div>
                         <div className="flex items-center gap-x-1">
-                            <NavLink to={userInfo?.isAdmin ? "/dashboard" : userInfo ? "/profile" : "/login"} className="hover:text-subMain transitions text-white">
+                            <NavLink
+                                to={userInfo?.isAdmin ? "/dashboard" : userInfo ? "/profile" : "/login"}
+                                className="hover:text-subMain transitions text-white"
+                            >
                                 {userInfo ? (
-                                    <img src={userInfo?.image ? userInfo?.image : 'userImage'} alt={userInfo?.fullName} className="w-8 h-8 rounded-full border object-cover border-subMain" />
+                                    userInfo?.image ? (
+                                        <img
+                                            src={userInfo?.image}
+                                            alt={userInfo?.fullName}
+                                            className="w-8 h-8 rounded-full border object-cover border-subMain"
+                                        />
+                                    ) : (
+                                        <span className="w-8 h-8 rounded-full border object-cover border-subMain flex items-center justify-center">
+                                            {userInfo?.fullName.substring(0, 1).toUpperCase()}
+                                        </span>
+                                    )
                                 ) : (
                                     <Button variant="text" size="sm" className="hidden lg:inline-block">
-                                        {t('login')}
+                                        {t("login")}
                                     </Button>
                                 )}
                             </NavLink>

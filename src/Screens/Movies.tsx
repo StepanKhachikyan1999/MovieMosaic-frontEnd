@@ -29,7 +29,7 @@ function MoviesPage() {
     );
     // get all categories
     // @ts-ignore
-    const {categories} = useSelector((state) => state.categoryGetAll);
+    const { categories } = useSelector((state) => state.categoryGetAll);
     const { t } = useTranslation()
 
     // queries

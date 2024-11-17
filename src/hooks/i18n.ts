@@ -25,16 +25,24 @@ i18n.use(initReactI18next).init({
                 login: "Login",
                 signIn: "Sign In",
                 signUp: "Sign Up",
+                loginToReviewThisMovie: "Login to review this movie",
                 popularMovies: "Popular Movies",
                 topMovies: "Top Rated Movies",
                 dontHaveAnyMovie: "Looks like we don't have a movie",
                 alreadyHaveAnAccount: "Already have an account?",
                 fullName: "full name",
                 comingSoon: "Coming Soon",
+                relatedMovies: "Related Movies",
                 backToHome: "Back to home",
                 createdBy: "created by",
                 password: "Password",
+                review: "Review",
+                casts: "Casts",
                 email: "Email",
+                languages: "languages",
+                message: "Message",
+                reviewForThisMovie: "You can write a review for this movie",
+                selectRating: "Select Rating",
                 filters: {
                   allCategories: "All Categories",
                   Sport: "Sport",
@@ -101,7 +109,15 @@ i18n.use(initReactI18next).init({
                       5: "5 star"
                 },
                 dontHaveAnAccount: " Don't have an account?",
-                user: "My name is: {{name}}"
+                user: "My name is: {{name}}",
+                Ratings: {
+                    poor: "Poor",
+                    fair: "Fair",
+                    good: "Good",
+                    veryGood: "Very Good",
+                    excellent: "Excellent",
+                    masterpiece: "Masterpiece"
+                }
             },
         },
         ARM: {
@@ -114,6 +130,7 @@ i18n.use(initReactI18next).init({
                 blog: "Բլոգ",
                 wishList: "Ընտրվածների ցանկ",
                 searchMovieName: "Որոնում ․․․",
+                relatedMovies: "Նմանատիպ ֆիլմեր",
                 watch: "Դիտել",
                 aboutUs: "Մեր Մասին",
                 login: "Մուտք",
@@ -128,6 +145,13 @@ i18n.use(initReactI18next).init({
                 backToHome: "Վերադառնալ",
                 createdBy: "կայքի զարգացում",
                 password: "Գաղտնաբառ",
+                review: "Կարծիքներ",
+                loginToReviewThisMovie: "Մուտք գործեք՝ այս ֆիլմը գնահատելու համար",
+                languages: "լեզուներ",
+                reviewForThisMovie: "Դուք կարող եք գրել մեկնաբանություն ֆիլմի վերաբերյալ",
+                selectRating: "ընտրել ռեիթինք",
+                casts: "Դերասանական կազմ",
+                message: "Հաղորդագրություն",
                 filters: {
                     allCategories: "Բոլորը",
                     Sport: "Սպորտային",
@@ -195,7 +219,15 @@ i18n.use(initReactI18next).init({
                 },
                 email: "Էլ․ հասցե",
                 dontHaveAnAccount: "Չունե՞ք հաշիվ",
-                user: "Mi nombre es: {{name}}"
+                user: "Mi nombre es: {{name}}",
+                Ratings: {
+                    poor: "Վատ",
+                    fair: "Միջակ",
+                    good: "Լավ",
+                    veryGood: "Շատ լավ",
+                    excellent: "Գերազանց",
+                    masterpiece: "Շեդևր"
+                }
             },
         },
         RU: {
@@ -213,6 +245,7 @@ i18n.use(initReactI18next).init({
                 login: "Вход",
                 signIn: "Bойти",
                 signUp: "Зарегистрируйтесь",
+                relatedMovies: "Связанные фильмы",
                 popularMovies: "известные фильмы",
                 topMovies: "самым высоким рейтингом",
                 dontHaveAnyMovie: "Похоже, у нас нет фильма.",
@@ -222,6 +255,11 @@ i18n.use(initReactI18next).init({
                 backToHome: "Вернуться домой",
                 createdBy: "создано",
                 password: "Пароль",
+                review: "Отзывы",
+                casts: "В ролях",
+                languages: "языки",
+                selectRating: "Выберите рейтинг",
+                reviewForThisMovie: "Вы можете написать отзыв к этому фильму",
                 filters: {
                     allCategories: "все категории",
                     Sport: "Cпортивные",
@@ -235,6 +273,7 @@ i18n.use(initReactI18next).init({
                     Horror: "Ужасы",
                     Drama: "Драмы",
                     Fantastic: "Фантастика",
+                    loginToReviewThisMovie: "Войдите, чтобы оставить отзыв об этом фильме",
                     Comedy: "Комедии",
                     Crime: "Криминал",
                     Melodrama: "Мелодрамы",
@@ -288,8 +327,17 @@ i18n.use(initReactI18next).init({
                         5: "5 звезда"
                 },
                 email: "Электронная почта",
+                message: "Сообщение",
                 dontHaveAnAccount: "У вас нет учетной записи?",
-                user: "Mi chiamo: {{name}}"
+                user: "Mi chiamo: {{name}}",
+                Ratings: {
+                    poor: "Плохой",
+                    fair: "Посредственный",
+                    good: "Хороший",
+                    veryGood: "Очень хороший",
+                    excellent: "Отличный",
+                    masterpiece: "Шедевр"
+                }
             },
         },
     },

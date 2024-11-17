@@ -1,23 +1,25 @@
 import React, {useContext, useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import MovieCasts from "../components/Single/MovieCasts";
 import MovieInfo from "../components/Single/MovieInfo";
 import MovieRates from "../components/Single/MovieRates";
 import Titles from "../components/Titles";
 import Layout from "../Layout/Layout";
-import {BsCollectionFill} from "react-icons/bs";
+import { BsCollectionFill } from "react-icons/bs";
 import Movie from "../components/Movie";
 import ShareMovieModal from "../components/Modals/ShareModal";
-import {useDispatch, useSelector} from "react-redux";
-import {getMovieByIdAction} from "../Redux/Actions/MoviesActions";
+import { useDispatch, useSelector } from "react-redux";
+import { getMovieByIdAction } from "../Redux/Actions/MoviesActions";
 import Loader from "../components/Notfications/Loader";
-import {RiMovie2Line} from "react-icons/ri";
-import {SidebarContext} from "../Context/DrawerContext";
-import {DownloadVideo} from "../Context/Functionalities";
+import { RiMovie2Line } from "react-icons/ri";
+import { SidebarContext } from "../Context/DrawerContext";
+import { DownloadVideo } from "../Context/Functionalities";
+import { useTranslation } from 'react-i18next'
 // @ts-ignore
 import FileSaver from "file-saver";
 
 function SingleMovie() {
+    const { t } = useTranslation()
     const [modalOpen, setModalOpen] = useState(false)
     // @ts-ignore
     const {progress, setprogress} = useContext(SidebarContext);
@@ -84,7 +86,7 @@ function SingleMovie() {
                         {/* related */}
                         {RelatedMovies?.length > 0 && (
                             <div className="my-16">
-                                <Titles title="Related Movies" Icon={BsCollectionFill}/>
+                                <Titles title={t('relatedMovies')} Icon={BsCollectionFill}/>
                                 <div
                                     className="grid sm:mt-10 mt-6 xl:grid-cols-4 2xl:grid-cols-5 lg:grid-cols-3 sm:grid-cols-2 gap-6">
                                     {RelatedMovies?.map((movie: any) => (
