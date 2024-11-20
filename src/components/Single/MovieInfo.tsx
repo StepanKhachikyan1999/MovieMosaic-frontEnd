@@ -39,7 +39,9 @@ function MovieInfo({movie, setModalOpen, DownloadVideo, progress}: any) {
                                 <FlexMovieItems movie={movie && movie}/>
                             </div>
                             {/* description */}
-                            <p className="text-text text-sm leading-7">{movie?.desc}</p>
+                            <p className="text-text text-sm leading-7">
+                                {t(`desc.${movie?.desc}`)}
+                            </p>
                             <div
                                 className="grid sm:grid-cols-5 grid-cols-3 gap-4 p-6 bg-main border border-gray-800 rounded-lg">
                                 {/* share */}
