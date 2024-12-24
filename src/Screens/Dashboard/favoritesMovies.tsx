@@ -1,13 +1,13 @@
-import React, {useContext, useEffect} from 'react'
+import React, { useContext, useEffect } from 'react'
 import Table from '../../components/Table'
 import SideBar from './SideBar'
-import {useDispatch, useSelector} from "react-redux";
-import {deleteFavoriteMoviesAction, getFavoriteMoviesAction,} from '../../Redux/Actions/userActions'
+import { useDispatch, useSelector } from "react-redux";
+import { deleteFavoriteMoviesAction, getFavoriteMoviesAction } from '../../Redux/Actions/userActions'
 import toast from "react-hot-toast";
 import Loader from "../../components/Notfications/Loader";
-import {Empty} from "../../components/Notfications/Empty";
-import {SidebarContext} from "../../Context/DrawerContext";
-import {DownloadVideo} from "../../Context/Functionalities";
+import { Empty } from "../../components/Notfications/Empty";
+import { SidebarContext } from "../../Context/DrawerContext";
+import { DownloadVideo } from "../../Context/Functionalities";
 // @ts-ignore
 import FileSaver from 'file-saver'
 

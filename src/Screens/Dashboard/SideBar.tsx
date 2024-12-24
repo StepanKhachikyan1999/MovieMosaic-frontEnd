@@ -1,13 +1,14 @@
 import React, {ReactNode} from 'react'
-import {BsFillGridFill} from 'react-icons/bs'
-import {FaHeart, FaListAlt, FaUsers} from 'react-icons/fa'
-import {RiLockPasswordLine, RiLogoutCircleLine, RiMovie2Fill,} from 'react-icons/ri'
-import {HiViewGridAdd} from 'react-icons/hi'
-import {FiSettings} from 'react-icons/fi'
+import { BsFillGridFill } from 'react-icons/bs'
+import { FaHeart, FaListAlt, FaUsers } from 'react-icons/fa'
+import { RiLockPasswordLine, RiLogoutCircleLine, RiMovie2Fill } from 'react-icons/ri'
+import { HiViewGridAdd } from 'react-icons/hi'
+import { FiSettings } from 'react-icons/fi'
 import Layout from '../../Layout/Layout'
-import {NavLink, useNavigate} from 'react-router-dom'
-import {useDispatch, useSelector} from 'react-redux'
-import {logoutAction} from '../../Redux/Actions/userActions'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { logoutAction } from '../../Redux/Actions/userActions'
+import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
 
 interface Link {
@@ -23,7 +24,8 @@ interface SideBarProps {
 function SideBar({children}: SideBarProps) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {userInfo} = useSelector((state: any) => state.userLogin);
+    const { t } = useTranslation()
+    const { userInfo } = useSelector((state: any) => state.userLogin);
 
     // logout
     const logoutHandler = () => {
@@ -79,17 +81,17 @@ function SideBar({children}: SideBarProps) {
         : userInfo
             ? [
                 {
-                    name: "Update Profile",
+                    name: "updateProfile",
                     link: "/profile",
                     icon: <FiSettings/>,
                 },
                 {
-                    name: "Favorites Movies",
+                    name: "favoritesMovies",
                     link: "/favorites",
                     icon: <FaHeart/>,
                 },
                 {
-                    name: "Change Password",
+                    name: "changePassword",
                     link: "/password",
                     icon: <RiLockPasswordLine/>,
                 },
@@ -111,14 +113,14 @@ function SideBar({children}: SideBarProps) {
                         {/* SideBar Links */}
                         {SideLinks.map((link, index) => (
                             <NavLink to={link.link} key={index} className={Hover}>
-                                {link.icon} <p>{link.name}</p>
+                                {link.icon} <p>{t(link.name)}</p>
                             </NavLink>
                         ))}
                         <button
                             onClick={logoutHandler}
                             className={`${inActive} ${hover} w-full `}
                         >
-                            <RiLogoutCircleLine/> Log Out
+                            <RiLogoutCircleLine/> {t("logOut")}
                         </button>
                     </div>
                     <div

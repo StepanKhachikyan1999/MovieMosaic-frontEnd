@@ -1,8 +1,8 @@
 import {yupResolver} from '@hookform/resolvers/yup'
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import {useForm} from 'react-hook-form'
 import toast from "react-hot-toast";
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {Imagepreview} from "../../components/Imagepreview";
 import {InlineError} from "../../components/Notfications/Error";
 import Uploder from "../../components/Uploder";
@@ -10,9 +10,11 @@ import {Input} from "../../components/UsedInputs";
 import {ProfileValidation} from "../../components/Validation/UserValidation";
 import {deleteProfileAction, updateProfileAction,} from "../../Redux/Actions/userActions";
 import SideBar from "./SideBar";
+import { useTranslation } from 'react-i18next'
 
 function Profile() {
     const dispatch = useDispatch();
+    const { t } = useTranslation();
     // @ts-ignore
     const {userInfo} = useSelector((state) => state.userLogin);
     const [imageUrl, setImageUrl] = useState(userInfo ? userInfo.image : "");
@@ -66,7 +68,7 @@ function Profile() {
     return (
         <SideBar>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
-                <h2 className="text-xl font-bold">Profile</h2>
+                <h2 className="text-xl font-bold">{t("profile")}</h2>
                 <div className="w-full grid lg:grid-cols-12 gap-6">
                     <div className="col-span-10">
                         {/*@ts-ignore*/}
@@ -83,8 +85,8 @@ function Profile() {
 
                 <div className="w-full">
                     <Input
-                        label="FullName"
-                        placeholder="NewMoviess React Tailwind"
+                        label={t("fullName")}
+                        placeholder={t("fullName")}
                         type="text"
                         bg={true}
                         name="fullName"
@@ -94,8 +96,8 @@ function Profile() {
                 </div>
                 <div className="w-full">
                     <Input
-                        label="Email"
-                        placeholder="netflixo@gmail.com"
+                        label={t("email")}
+                        placeholder="example@gmail.com"
                         type="email"
                         name="email"
                         register={register("email")}

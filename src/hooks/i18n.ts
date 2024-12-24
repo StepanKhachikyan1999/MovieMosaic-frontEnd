@@ -122,7 +122,13 @@ i18n.use(initReactI18next).init({
                     veryGood: "Very Good",
                     excellent: "Excellent",
                     masterpiece: "Masterpiece"
-                }
+                },
+                updateProfile: "Update Profile",
+                favoritesMovies: "Favorites Movies",
+                changePassword: "Change Password",
+                logOut: "Log Out",
+                dragYourImageHere: "Drag your image here",
+                profile: "Profile",
             },
         },
         ARM: {
@@ -237,7 +243,13 @@ i18n.use(initReactI18next).init({
                     veryGood: "Շատ լավ",
                     excellent: "Գերազանց",
                     masterpiece: "Շեդևր"
-                }
+                },
+                updateProfile: "Թարմացնել պրոֆիլը",
+                favoritesMovies: "Սիրված ֆիլմեր",
+                changePassword: "Փոխել գաղտնաբառը",
+                logOut: "Դուրս Գալ",
+                dragYourImageHere: "Կարող եք ավելացնել նկար",
+                profile: "Պրոֆիլ",
             },
         },
         RU: {
@@ -352,7 +364,13 @@ i18n.use(initReactI18next).init({
                     veryGood: "Очень хороший",
                     excellent: "Отличный",
                     masterpiece: "Шедевр"
-                }
+                },
+                updateProfile: "Обновить профиль",
+                favoritesMovies: "Избранные фильмы",
+                changePassword: "Изменить пароль",
+                logOut: "Выйти",
+                dragYourImageHere: "Перетащите изображение сюда",
+                profile: "Профиль",
             },
         },
     },

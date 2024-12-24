@@ -3,8 +3,10 @@ import {useDropzone} from 'react-dropzone'
 import {FiUploadCloud} from 'react-icons/fi'
 import {uploadImageservice} from '../Redux/api/ImageUploadService'
 import Loader from './Notfications/Loader'
+import { useTranslation } from 'react-i18next'
 
 function Uploder({setImageUrl}: any) {
+    const { t } = useTranslation()
     const [loading, setLoading] = useState(false);
 
     // upload file
@@ -38,7 +40,7 @@ function Uploder({setImageUrl}: any) {
                     <span className="mx-auto flex-colo text-subMain text-3xl">
             <FiUploadCloud/>
           </span>
-                    <p className="text-sm mt-2">Drag your image here</p>
+                    <p className="text-sm mt-2">{t("dragYourImageHere")}</p>
                     <em className="text-xs text-border">
                         {isDragActive
                             ? "Drop it like it's hot!"
