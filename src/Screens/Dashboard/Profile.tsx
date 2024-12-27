@@ -1,14 +1,14 @@
-import {yupResolver} from '@hookform/resolvers/yup'
 import React, { useEffect, useState } from 'react'
-import {useForm} from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from 'react-hook-form'
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import {Imagepreview} from "../../components/Imagepreview";
-import {InlineError} from "../../components/Notfications/Error";
+import { Imagepreview } from "../../components/Imagepreview";
+import { InlineError } from "../../components/Notfications/Error";
 import Uploder from "../../components/Uploder";
-import {Input} from "../../components/UsedInputs";
-import {ProfileValidation} from "../../components/Validation/UserValidation";
-import {deleteProfileAction, updateProfileAction,} from "../../Redux/Actions/userActions";
+import { Input } from "../../components/UsedInputs";
+import { ProfileValidation } from "../../components/Validation/UserValidation";
+import { deleteProfileAction, updateProfileAction } from "../../Redux/Actions/userActions";
 import SideBar from "./SideBar";
 import { useTranslation } from 'react-i18next'
 
@@ -111,13 +111,13 @@ function Profile() {
                         disabled={deleteLoading || isLoading}
                         className="bg-subMain font-medium transitions hover:bg-main border border-subMain text-white py-3 px-6 rounded w-full sm:w-auto"
                     >
-                        {deleteLoading ? "Deleting..." : "Delete Account"}
+                        {deleteLoading ? t('deleting') : t('deleteAccount')}
                     </button>
                     <button
                         disabled={deleteLoading || isLoading}
                         className="bg-main font-medium transitions hover:bg-subMain border border-subMain text-white py-3 px-6 rounded w-full sm:w-auto"
                     >
-                        {isLoading ? "Updating..." : "Update Profile"}
+                        {isLoading ? t('updating') : t('updateProfile')}
                     </button>
                 </div>
             </form>

@@ -1,15 +1,17 @@
-import React, {useEffect} from 'react'
-import {yupResolver} from '@hookform/resolvers/yup'
-import {useForm} from "react-hook-form";
+import React, { useEffect } from 'react'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import {useDispatch, useSelector} from "react-redux";
-import {InlineError} from "../../components/Notfications/Error";
-import {Input} from "../../components/UsedInputs";
-import {PasswordValidation} from "../../components/Validation/UserValidation";
-import {changePasswordAction} from "../../Redux/Actions/userActions";
+import { useDispatch, useSelector } from "react-redux";
+import { InlineError } from "../../components/Notfications/Error";
+import { Input } from "../../components/UsedInputs";
+import { PasswordValidation } from "../../components/Validation/UserValidation";
+import { changePasswordAction } from "../../Redux/Actions/userActions";
 import SideBar from "./SideBar";
+import { useTranslation } from 'react-i18next';
 
 function Password() {
+    const { t } = useTranslation()
     const dispatch = useDispatch()
     const {isLoading, isError, message, isSuccess} = useSelector(
         (state: any) => state.userchangepassword
@@ -48,10 +50,10 @@ function Password() {
     return (
         <SideBar>
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
-                <h2 className="text-xl font-bold">Change Password</h2>
+                <h2 className="text-xl font-bold">{t('changePassword')}</h2>
                 <div className="w-full">
                     <Input
-                        label="Previous Password"
+                        label={t('previousPassword')}
                         placeholder="********"
                         type="password"
                         bg={true}
@@ -59,12 +61,12 @@ function Password() {
                         register={register("oldPassword")}
                     />
                     {errors.oldPassword && (
-                        <InlineError text={errors.oldPassword.message}/>
+                        <InlineError text={t(`yup.${errors.oldPassword.message}`)} />
                     )}
                 </div>
                 <div className="w-full">
                     <Input
-                        label="New Password"
+                        label={t('newPassword')}
                         placeholder="********"
                         type="password"
                         bg={true}
@@ -72,12 +74,12 @@ function Password() {
                         register={register("newPassword")}
                     />
                     {errors.newPassword && (
-                        <InlineError text={errors.newPassword.message}/>
+                        <InlineError text={t(`yup.${errors.newPassword.message}`)} />
                     )}
                 </div>
                 <div className="w-full">
                     <Input
-                        label="Confirm Password"
+                        label={t('confirmPassword')}
                         placeholder="********"
                         type="password"
                         bg={true}
@@ -85,7 +87,7 @@ function Password() {
                         register={register("confirmPassword")}
                     />
                     {errors.confirmPassword && (
-                        <InlineError text={errors.confirmPassword.message}/>
+                        <InlineError text={t(`yup.${errors.confirmPassword.message}`)} />
                     )}
                 </div>
 
@@ -95,7 +97,7 @@ function Password() {
                         type="submit"
                         className="bg-main font-medium transitions hover:bg-subMain border border-subMain text-white py-3 px-6 rounded w-full sm:w-auto"
                     >
-                        {isLoading ? "Changing..." : "Change Password"}
+                        {isLoading ? t('updating') : t('changePassword')}
                     </button>
                 </div>
             </form>

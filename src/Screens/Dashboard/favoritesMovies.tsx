@@ -8,11 +8,13 @@ import Loader from "../../components/Notfications/Loader";
 import { Empty } from "../../components/Notfications/Empty";
 import { SidebarContext } from "../../Context/DrawerContext";
 import { DownloadVideo } from "../../Context/Functionalities";
+import { useTranslation } from 'react-i18next'
 // @ts-ignore
 import FileSaver from 'file-saver'
 
 function FavoritesMovies() {
     const dispatch = useDispatch();
+    const { t } = useTranslation();
     // @ts-ignore
     const {progress, setprogress} = useContext(SidebarContext);
     const {isLoading, isError, likedMovies} = useSelector(
@@ -60,14 +62,14 @@ function FavoritesMovies() {
         <SideBar>
             <div className="flex flex-col gap-6">
                 <div className="flex-btn gap-2">
-                    <h2 className="text-xl font-bold">Favorites Movies</h2>
+                    <h2 className="text-xl font-bold">{t('favoritesMovies')}</h2>
                     {likedMovies?.length > 0 && (
                         <button
                             disabled={deleteLoading}
                             onClick={deleteMoviesHandler}
                             className="bg-main font-medium transitions hover:bg-subMain border border-subMain text-white py-3 px-6 rounded"
                         >
-                            {deleteLoading ? "Deleting..." : "Delete All"}
+                            {deleteLoading ? t('deleting') : "Delete All"}
                         </button>
                     )}
                 </div>
@@ -81,7 +83,7 @@ function FavoritesMovies() {
                         progress={progress}
                     />
                 ) : (
-                    <Empty message="You have no favorites movies"/>
+                    <Empty message={t('youHaveNoFavoriteMovies')}/>
                 )}
             </div>
         </SideBar>

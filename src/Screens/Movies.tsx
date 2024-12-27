@@ -10,10 +10,10 @@ import { RiMovie2Line } from "react-icons/ri";
 import { getAllMoviesAction } from "../Redux/Actions/MoviesActions";
 import { LanguageData, RatesData, TimesData, YearData } from "../Data/FilterData";
 import { useParams } from "react-router-dom";
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
 function MoviesPage() {
-    const {search} = useParams();
+    const { search } = useParams();
     const dispatch = useDispatch();
     const [category, setCategory] = useState({title: "allCategories"});
     const [year, setYear] = useState(YearData[0]);
@@ -30,7 +30,7 @@ function MoviesPage() {
     // get all categories
     // @ts-ignore
     const { categories } = useSelector((state) => state.categoryGetAll);
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     // queries
     const queries = useMemo(() => {
@@ -96,11 +96,11 @@ function MoviesPage() {
             <div className="min-height-screen container mx-auto px-2 my-6">
                 <Filters data={datas}/>
                 <p className="text-lg font-medium my-6">
-                    Total{" "}
+                    {t('total')}{" "}
                     <span className="font-bold text-subMain">
             {movies ? movies?.length : 0}
           </span>{" "}
-                    items Found {search && `for "${search}"`}
+                    {t('itemsFound')} {search && `for "${search}"`}
                 </p>
                 {isLoading ? (
                     <div className="w-full gap-6 flex-colo min-h-screen">
