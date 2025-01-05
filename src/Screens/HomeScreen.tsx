@@ -3,10 +3,9 @@ import toast from "react-hot-toast";
 import {useDispatch, useSelector} from "react-redux";
 import Banner from "../components/Home/Banner";
 import PopularMovies from "../components/Home/PopularMovies";
-// import Promos from "../components/Home/Promos";
 import TopRated from "../components/Home/Toprated";
 import Layout from "../Layout/Layout";
-import {getAllMoviesAction, getRandomMoviesAction, getTopRatedMovieAction,} from "../Redux/Actions/MoviesActions";
+import { getAllMoviesAction, getRandomMoviesAction, getTopRatedMovieAction } from "../Redux/Actions/MoviesActions";
 
 function HomeScreen() {
     const dispatch = useDispatch();

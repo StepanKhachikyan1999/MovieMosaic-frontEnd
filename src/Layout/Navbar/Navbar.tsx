@@ -62,7 +62,7 @@ function NavBar(): any {
                 color="blue-gray"
                 className="flex items-center gap-x-2 p-1 font-medium"
             >
-                <NavLink to="/movies" className="hover:text-subMain transitions text-white flex items-center">
+                <NavLink to="/movies?type=movies" className="hover:text-subMain transitions text-white flex items-center">
                     {t('movies')}
                 </NavLink>
             </Typography>
@@ -72,7 +72,7 @@ function NavBar(): any {
                 color="blue-gray"
                 className="flex items-center gap-x-2 p-1 font-medium"
             >
-                <NavLink to="/coming-soon" className="hover:text-subMain transitions text-white flex items-center">
+                <NavLink to="/movies?type=serials" className="hover:text-subMain transitions text-white flex items-center">
                     {t('serials')}
                 </NavLink>
             </Typography>
@@ -82,7 +82,7 @@ function NavBar(): any {
                 color="blue-gray"
                 className="flex items-center gap-x-2 p-1 font-medium"
             >
-                <NavLink to="/coming-soon" className="hover:text-subMain transitions text-white flex items-center">
+                <NavLink to="/movies?type=cartoons" className="hover:text-subMain transitions text-white flex items-center">
                     {t('cartoons')}
                 </NavLink>
             </Typography>

@@ -9,7 +9,7 @@ import Loader from "../components/Notfications/Loader";
 import { RiMovie2Line } from "react-icons/ri";
 import { getAllMoviesAction } from "../Redux/Actions/MoviesActions";
 import { LanguageData, RatesData, TimesData, YearData } from "../Data/FilterData";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
 function MoviesPage() {
@@ -19,6 +19,8 @@ function MoviesPage() {
     const [year, setYear] = useState(YearData[0]);
     const [times, setTimes] = useState(TimesData[0]);
     const [rates, setRates] = useState(RatesData[0]);
+    const [searchParams] = useSearchParams();
+    const type = searchParams.get("type");
     const [language, setLanguage] = useState(LanguageData[0]);
     const sameClass =
         "text-white py-2 px-4 rounded font-semibold border-2 border-subMain hover:bg-subMain";
@@ -41,9 +43,10 @@ function MoviesPage() {
             rate: rates?.title.replace(/\D/g, ""),
             year: year?.title.replace(/\D/g, ""),
             search: search ? search : "",
+            type: type || ""
         };
         return query;
-    }, [category, times, language, rates, year, search]);
+    }, [category, times, language, rates, year, search, type]);
 
     // useEffect
     useEffect(() => {

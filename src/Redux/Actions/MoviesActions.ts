@@ -1,7 +1,7 @@
 import * as moviesConstants from '../Constants/MoviesConstants'
 import * as moviesAPIs from "../api/MoviesServices";
 import toast from "react-hot-toast";
-import {ErrorsAction, tokenProtection} from "../Protection";
+import { ErrorsAction, tokenProtection } from "../Protection";
 
 // get all movies action
 export const getAllMoviesAction =
@@ -13,6 +13,7 @@ export const getAllMoviesAction =
          year = "",
          search = "",
          pageNumber = "",
+         type = ""
      }) =>
         async (dispatch: any) => {
             try {
@@ -24,7 +25,8 @@ export const getAllMoviesAction =
                     rate,
                     year,
                     search,
-                    pageNumber
+                    pageNumber,
+                    type
                 );
                 dispatch({
                     type: moviesConstants.MOVIES_LIST_SUCCESS,
