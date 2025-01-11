@@ -1,15 +1,30 @@
-const path = require("path");
+const path = require('path');
+
 module.exports = {
-    resolve: {
-        extensions: [".js", ".jsx", "ts", "tsx"],
-        fallback: {
-            https: require.resolve('https-browserify'),
-        },
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
     },
-    devServer: {
-        contentBase: path.join(__dirname, "public"), // Serve files from this directory
-        port: 3000, // Port for the development server
-        open: true, // Open the default web browser when the server starts
-        historyApiFallback: true, // Redirects 404s to index.html
+    module: {
+        rules: [
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            '@babel/preset-env',
+                            '@babel/preset-react',
+                            '@babel/preset-typescript',
+                        ],
+                    },
+                },
+            },
+        ],
+    },
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
 };
