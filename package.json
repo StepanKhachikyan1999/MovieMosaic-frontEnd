@@ -2,7 +2,7 @@
   "name": "movie-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": ".",
   "dependencies": {
     "-": "^0.0.1",
     "@headlessui/react": "^1.7.17",
