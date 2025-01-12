@@ -112,7 +112,8 @@ i18n.use(initReactI18next).init({
                 desc: {
                     survivre: "A couple celebrates their son's birthday in the middle of the ocean on their boat ." +
                         " A violent storm hits and it brings up hungry creatures from the depths and they fight for their survival.",
-                    avatarTheWayOfWater: "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home."
+                    avatarTheWayOfWater: "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
+                    squidGame: "The series revolves around a secret contest where 456 players, all of whom are in deep financial hardship, risk their lives to play a series of deadly children's games for the chance to win a ₩45.6 billion (US$39.86 million) prize"
                 },
                 dontHaveAnAccount: " Don't have an account?",
                 user: "My name is: {{name}}",
@@ -246,6 +247,7 @@ i18n.use(initReactI18next).init({
                 desc: {
                     survivre: "Զույգը նշում է որդու ծննդյան տարեդարձը օվկիանոսի մեջտեղում՝ իրենց նավով։ Դաժան փոթորիկ է հարվածում, և այն խորքերից դուրս է բերում սոված արարածներ, և նրանք պայքարում են իրենց գոյատևման համար",
                     avatarTheWayOfWater: "Ջեյք Սալին ապրում է իր նորահայտ ընտանիքի հետ, որը ձևավորվել է արտաարեգակնային Պանդորայի վրա: Երբ ծանոթ սպառնալիքը վերադառնում է ավարտելու այն, ինչ նախկինում սկսվել է, Ջեյքը պետք է աշխատի Նեյտիրիի և Նավի ռասայի բանակի հետ՝ պաշտպանելու իրենց տունը:",
+                    squidGame: "Սերիալը պտտվում է գաղտնի մրցույթի շուրջ, որտեղ 456 խաղացողներ, որոնք բոլորն էլ ֆինանսական ծանր դժվարությունների մեջ են, վտանգում են իրենց կյանքը՝ խաղալով մահացու մանկական խաղերի շարք՝ 45,6 միլիարդ ₩ (39,86 միլիոն ԱՄՆ դոլար) մրցանակ շահելու համար։"
 
                 },
                 email: "Էլ․ հասցե",
@@ -379,8 +381,8 @@ i18n.use(initReactI18next).init({
                 },
                 desc: {
                     survivre: "Пара празднует день рождения сына посреди океана на своей лодке. Налетает сильный шторм, который поднимает из глубин голодных существ, и они борются за свое выживание",
-                    avatarTheWayOfWater: "Джейк Салли живет со своей новой семьей, образованной на внесолнечной луне Пандора. Когда знакомая угроза возвращается, чтобы закончить то, что было начато ранее, Джейк должен работать с Нейтири и армией расы На'ви, чтобы защитить свой дом."
-
+                    avatarTheWayOfWater: "Джейк Салли живет со своей новой семьей, образованной на внесолнечной луне Пандора. Когда знакомая угроза возвращается, чтобы закончить то, что было начато ранее, Джейк должен работать с Нейтири и армией расы На'ви, чтобы защитить свой дом.",
+                    squidGame: "Сериал вращается вокруг секретного конкурса, в котором 456 игроков, все из которых находятся в тяжелом финансовом положении, рискуют своими жизнями, играя в серию смертельных детских игр за шанс выиграть приз в размере 45,6 млрд вон (39,86 млн долларов США)"
                 },
                 email: "Электронная почта",
                 message: "Сообщение",
