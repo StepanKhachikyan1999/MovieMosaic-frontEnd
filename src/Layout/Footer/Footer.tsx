@@ -75,16 +75,16 @@ function Footer() {
       justify-center gap-y-6 gap-x-12 border-t border-neutral-200 py-6 pl-4 pr-4 text-center">
                 <Typography color="blue-gray" className="font-normal flex items-center justify-center gap-2">
                     &copy; 2024 filmhouse.am
-                    <div style={{
-                        color: 'white',
-                        textAlign: 'center',
-                        padding: '5px'
-                    }}>
-                        {t('createdBy')} <a style={{
-                        color: '#046381',
-                        fontSize: '15px'
-                    }} target='_blank' href="https://meekz-it.vercel.app/">MeekzIT</a>
-                    </div>
+                    {/*<div style={{*/}
+                    {/*    color: 'white',*/}
+                    {/*    textAlign: 'center',*/}
+                    {/*    padding: '5px'*/}
+                    {/*}}>*/}
+                    {/*    {t('createdBy')} <a style={{*/}
+                    {/*    color: '#046381',*/}
+                    {/*    fontSize: '15px'*/}
+                    {/*}} target='_blank' href="https://meekz-it.vercel.app/">MeekzIT</a>*/}
+                    {/*</div>*/}
                 </Typography>
             </footer>
         </div>

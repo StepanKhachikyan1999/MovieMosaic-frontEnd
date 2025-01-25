@@ -98,7 +98,7 @@ function TopRated({movies, isLoading}: any) {
     return (
         <div className="my-16">
             {/*<Titles title="Top Rated" Icon={BsBookmarkStarFill}/>*/}
-            <Titles title={t('popularMovies')} Icon={BsBookmarkStarFill}/>
+            <Titles title={t('topMovies')} Icon={BsBookmarkStarFill}/>
             <div className="mt-10">
                 {isLoading ? (
                     <Loader/>
