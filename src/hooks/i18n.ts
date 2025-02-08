@@ -113,7 +113,9 @@ i18n.use(initReactI18next).init({
                     survivre: "A couple celebrates their son's birthday in the middle of the ocean on their boat ." +
                         " A violent storm hits and it brings up hungry creatures from the depths and they fight for their survival.",
                     avatarTheWayOfWater: "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
-                    squidGame: "The series revolves around a secret contest where 456 players, all of whom are in deep financial hardship, risk their lives to play a series of deadly children's games for the chance to win a ₩45.6 billion (US$39.86 million) prize"
+                    squidGame: "The series revolves around a secret contest where 456 players, all of whom are in deep financial hardship, risk their lives to play a series of deadly children's games for the chance to win a ₩45.6 billion (US$39.86 million) prize.",
+                    anora: "A young escort from Brooklyn meets and impulsively marries the son of a Russian oligarch. Once the news reaches Russia, her fairy tale is threatened as his parents set out for New York to get the marriage annulled.",
+                    mufasa: "Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny."
                 },
                 dontHaveAnAccount: " Don't have an account?",
                 user: "My name is: {{name}}",
@@ -177,7 +179,7 @@ i18n.use(initReactI18next).init({
                 languages: "լեզուներ",
                 reviewForThisMovie: "Դուք կարող եք գրել մեկնաբանություն ֆիլմի վերաբերյալ",
                 selectRating: "ընտրել ռեիթինք",
-                casts: "Դերասանական կազմ",
+                casts: "Գլխավոր դերերում",
                 message: "Հաղորդագրություն",
                 filters: {
                     allCategories: "Բոլորը",
@@ -247,7 +249,9 @@ i18n.use(initReactI18next).init({
                 desc: {
                     survivre: "Զույգը նշում է որդու ծննդյան տարեդարձը օվկիանոսի մեջտեղում՝ իրենց նավով։ Դաժան փոթորիկ է հարվածում, և այն խորքերից դուրս է բերում սոված արարածներ, և նրանք պայքարում են իրենց գոյատևման համար",
                     avatarTheWayOfWater: "Ջեյք Սալին ապրում է իր նորահայտ ընտանիքի հետ, որը ձևավորվել է արտաարեգակնային Պանդորայի վրա: Երբ ծանոթ սպառնալիքը վերադառնում է ավարտելու այն, ինչ նախկինում սկսվել է, Ջեյքը պետք է աշխատի Նեյտիրիի և Նավի ռասայի բանակի հետ՝ պաշտպանելու իրենց տունը:",
-                    squidGame: "Սերիալը պտտվում է գաղտնի մրցույթի շուրջ, որտեղ 456 խաղացողներ, որոնք բոլորն էլ ֆինանսական ծանր դժվարությունների մեջ են, վտանգում են իրենց կյանքը՝ խաղալով մահացու մանկական խաղերի շարք՝ 45,6 միլիարդ ₩ (39,86 միլիոն ԱՄՆ դոլար) մրցանակ շահելու համար։"
+                    squidGame: "Սերիալը պտտվում է գաղտնի մրցույթի շուրջ, որտեղ 456 խաղացողներ, որոնք բոլորն էլ ֆինանսական ծանր դժվարությունների մեջ են, վտանգում են իրենց կյանքը՝ խաղալով մահացու մանկական խաղերի շարք՝ 45,6 միլիարդ ₩ (39,86 միլիոն ԱՄՆ դոլար) մրցանակ շահելու համար։",
+                    anora: "Անորան երիտասարդ մերկապարուհի է Բրայթոն Բիչից՝ Նյու Յորքի ռուսալեզու համայնքից: Նա ռուսերեն գիտի, ուստի շեֆը նրան ծանոթացնում է ռուսախոս հաճախորդների հետ: Նա ծանոթանում է ռուս օլիգարխի որդու՝ Վանյայի հետ, երկուսն էլ սիրահարվում են ու ամուսնանում։ Նրանց հեքիաթային ամուսնությունը վտանգի տակ է հայտնվում, երբ տղայի ծնողները գալիս են Նյու Յորք՝ ստիպելու նրան ամուսնալուծվել։",
+                    mufasa: "Մուֆասան, մի փոքրիկ առյուծ, որը կորել է ու միայնակ է, հանդիպում է համակրելի առյուծի՝ Տակայի, որը թագավորական արքայատոհմի ժառանգն է։ Պատահական այդ հանդիպումը սկիզբ է դնում մի մեծ ճանապարհորդության՝ մի խումբ անհարմարների, որոնք փնտրում են իրենց ճակատագիրը։"
 
                 },
                 email: "Էլ․ հասցե",
@@ -382,7 +386,9 @@ i18n.use(initReactI18next).init({
                 desc: {
                     survivre: "Пара празднует день рождения сына посреди океана на своей лодке. Налетает сильный шторм, который поднимает из глубин голодных существ, и они борются за свое выживание",
                     avatarTheWayOfWater: "Джейк Салли живет со своей новой семьей, образованной на внесолнечной луне Пандора. Когда знакомая угроза возвращается, чтобы закончить то, что было начато ранее, Джейк должен работать с Нейтири и армией расы На'ви, чтобы защитить свой дом.",
-                    squidGame: "Сериал вращается вокруг секретного конкурса, в котором 456 игроков, все из которых находятся в тяжелом финансовом положении, рискуют своими жизнями, играя в серию смертельных детских игр за шанс выиграть приз в размере 45,6 млрд вон (39,86 млн долларов США)"
+                    squidGame: "Сериал вращается вокруг секретного конкурса, в котором 456 игроков, все из которых находятся в тяжелом финансовом положении, рискуют своими жизнями, играя в серию смертельных детских игр за шанс выиграть приз в размере 45,6 млрд вон (39,86 млн долларов США)",
+                    anora: "Бруклин. Стриптизерша Анора, предпочитающая имя Эни, знакомится с сыном русского олигарха Ваней, который проводит всё время в вечеринках и развлечениях. Вскоре парень выкупает время Эни на неделю, предлагает слетать в Вегас, а там молодые люди спонтанно женятся. Узнав об этом из газет, родители Вани приходят в ярость и срочно вылетают из России в США, а разобраться в ситуации велят нью-йоркскому армянину Торосу, который должен был присматривать за их сыном.",
+                    mufasa: "Муфаса, потерявшийся и одинокий львёнок, встречает сочувствующего льва по имени Така, наследника королевской крови. Эта случайная встреча запускает масштабное путешествие группы изгоев, ищущих свою судьбу."
                 },
                 email: "Электронная почта",
                 message: "Сообщение",
