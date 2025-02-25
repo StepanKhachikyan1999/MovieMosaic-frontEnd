@@ -6,7 +6,7 @@ import PopularMovies from "../components/Home/PopularMovies";
 import TopRated from "../components/Home/Toprated";
 import Layout from "../Layout/Layout";
 import { getAllMoviesAction, getRandomMoviesAction, getTopRatedMovieAction } from "../Redux/Actions/MoviesActions";
-import Inposted from "../components/Inposted";
+// import Inposted from "../components/Inposted";
 
 function HomeScreen() {
     const dispatch = useDispatch();
@@ -50,7 +50,7 @@ function HomeScreen() {
             <div className="container mx-auto min-h-screen px-2 mb-6">
                 <Banner movies={movies} isLoading={isLoading}/>
                 <PopularMovies movies={randomMovies} isLoading={randomLoading}/>
-                <Inposted />
+                {/*<Inposted />*/}
                 {/* <Promos/> */}
                 <TopRated movies={topMovies} isLoading={topLoading}/>
             </div>

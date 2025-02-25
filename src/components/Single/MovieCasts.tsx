@@ -47,7 +47,7 @@ function MovieCasts({movie}: any) {
                                     <img
                                         src={cast?.image ? cast?.image : "/images/user.png"}
                                         alt={cast?.name}
-                                        className="w-full h-64 object-cover rounded mb-4"
+                                        className="w-32 h-32 object-cover rounded mb-4"
                                     />
                                     <p>{cast?.name}</p>
                                 </div>
